@@ -11,6 +11,7 @@ from musical_time_machine.domain.errors import (
     BrowserFileMissingError,
     ChartParseError,
     ChartUnavailableError,
+    PlaylistCreationError,
 )
 from musical_time_machine.domain.playlist import Playlist
 from musical_time_machine.domain.song import Song
@@ -110,3 +111,51 @@ def test_main_without_flag_does_not_use_the_music_service() -> None:
 
     assert code == 0
     assert lines == ["1. T - A"]
+
+
+def _create(answer: str, service: FakeMusicService) -> tuple[int, list[str]]:
+    lines: list[str] = []
+    code = main(
+        ["--create-playlist"],
+        music_service=service,
+        read=lambda _prompt: answer,
+        write=lines.append,
+    )
+    return code, lines
+
+
+def test_main_create_playlist_reports_creation() -> None:
+    service = FakeMusicService()
+
+    code, lines = _create("2026-04-18", service)
+
+    assert code == 0
+    assert lines == ['Created playlist "2026-04-18 Billboard 100".']
+    assert len(service.created) == 1
+
+
+def test_main_create_playlist_reports_existing_playlist() -> None:
+    service = FakeMusicService([Playlist("a", "2026-04-18 Billboard 100")])
+
+    code, lines = _create("2026-04-18", service)
+
+    assert code == 0
+    assert lines == ['Playlist "2026-04-18 Billboard 100" already exists; nothing was created.']
+    assert service.created == []
+
+
+def test_main_create_playlist_returns_one_for_invalid_date() -> None:
+    service = FakeMusicService()
+
+    code, lines = _create("nope", service)
+
+    assert code == 1
+    assert "YYYY-MM-DD" in lines[0]
+    assert service.created == []
+
+
+def test_main_create_playlist_returns_one_on_domain_error() -> None:
+    code, lines = _create("2026-04-18", FakeMusicService(error=PlaylistCreationError("failed")))
+
+    assert code == 1
+    assert lines == ["failed"]

@@ -14,8 +14,13 @@ from musical_time_machine.constants import (
     BROWSER_FILE_MISSING_REASON,
     BROWSER_FILE_NAME,
     BROWSER_RENEWAL_MESSAGE,
+    PLAYLIST_CREATION_FAILED_MESSAGE,
 )
-from musical_time_machine.domain.errors import AuthenticationError, BrowserFileMissingError
+from musical_time_machine.domain.errors import (
+    AuthenticationError,
+    BrowserFileMissingError,
+    PlaylistCreationError,
+)
 from musical_time_machine.domain.playlist import Playlist
 
 _logger = logging.getLogger(__name__)
@@ -32,6 +37,15 @@ class YTMusicLike(Protocol):
         limit: int | None = ...,
     ) -> list[dict[str, Any]]:  # ytmusicapi returns untyped JSON dictionaries
         """@brief List the library playlists as raw dictionaries."""
+        ...
+
+    def create_playlist(
+        self,
+        title: str,
+        description: str,
+        privacy_status: str = ...,
+    ) -> str | dict[str, Any]:  # the id on success, an error dictionary on failure
+        """@brief Create a playlist; returns its id or an error dictionary."""
         ...
 
 
@@ -69,6 +83,26 @@ class YouTubeMusicService:
             ]
         except _CLIENT_ERRORS as error:
             raise self._rejected(error) from error
+
+    def create_playlist(self, title: str, description: str, privacy: str) -> str:
+        """@brief Create a playlist in the user's library.
+
+        @param title Playlist title.
+        @param description Playlist description.
+        @param privacy Privacy status, for example "PRIVATE".
+        @return The identifier of the new playlist.
+        @throws BrowserFileMissingError when the browser file does not exist.
+        @throws AuthenticationError when YouTube Music rejects the headers.
+        @throws PlaylistCreationError when YouTube Music answers without a playlist id.
+        """
+        client = self._connect()
+        try:
+            result = client.create_playlist(title, description, privacy_status=privacy)
+        except _CLIENT_ERRORS as error:
+            raise self._rejected(error) from error
+        if not isinstance(result, str):
+            raise PlaylistCreationError(PLAYLIST_CREATION_FAILED_MESSAGE.format(reason=result))
+        return result
 
     def _connect(self) -> YTMusicLike:
         if self._client is not None:

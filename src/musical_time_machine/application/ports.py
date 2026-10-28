@@ -30,3 +30,13 @@ class MusicService(Protocol):
         @return The playlists of the library.
         """
         ...
+
+    def create_playlist(self, title: str, description: str, privacy: str) -> str:
+        """@brief Create a playlist in the user's library.
+
+        @param title Playlist title.
+        @param description Playlist description.
+        @param privacy Privacy status, for example "PRIVATE".
+        @return The identifier of the new playlist.
+        """
+        ...

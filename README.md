@@ -83,7 +83,7 @@ The program is added step by step (one pull request per lecture step):
 | --- | --- |
 | 1. Scrape the Billboard Hot 100 | done (below) |
 | 2. YouTube Music authentication | code done; live screenshot waits for `browser.json` |
-| 3. Create the playlist | planned in milestone 5 |
+| 3. Create the playlist | code done; live screenshot waits for `browser.json` |
 | 4. Search and add songs | planned in milestone 6 |
 
 ### Step 1 - Scrape the Billboard Hot 100
@@ -115,6 +115,18 @@ It prints `Found N playlists in your library.`. With no or an expired `browser.j
 The screenshot below shows the run **without** a `browser.json` and the tests that use a fake YouTube Music service. A screenshot of a live login is added once the file exists (issue 22 stays open until then); the file holds personal cookies and is never committed.
 
 ![Login check without browser.json and the step 2 tests](docs/wiki/images/step2-check-login.png)
+
+### Step 3 - Create the playlist
+
+```bash
+python -m musical_time_machine --create-playlist
+```
+
+It asks for the date and creates the private playlist `YYYY-MM-DD Billboard 100` in your YouTube Music library. It first looks through `get_library_playlists()` for a playlist with the same title, so a second run for the same date creates nothing and says so.
+
+The screenshot shows the tests of this step, which use a fake YouTube Music service (no account needed). A screenshot of the live playlist is added once `browser.json` exists (issue 27 stays open until then).
+
+![Tests of step 3: the playlist is created once](docs/wiki/images/step3-create-playlist.png)
 
 The screenshots and the instructions of the next steps are added with each step.
 
