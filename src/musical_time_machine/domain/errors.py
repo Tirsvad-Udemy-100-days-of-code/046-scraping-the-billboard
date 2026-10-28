@@ -29,3 +29,11 @@ class AuthenticationError(MusicalTimeMachineError):
 
 class PlaylistCreationError(MusicalTimeMachineError):
     """@brief YouTube Music did not create the playlist."""
+
+
+class SongSearchError(MusicalTimeMachineError):
+    """@brief YouTube Music could not search for a song."""
+
+
+class SongAddError(MusicalTimeMachineError):
+    """@brief YouTube Music did not add a song to the playlist."""

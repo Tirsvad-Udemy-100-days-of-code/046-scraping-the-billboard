@@ -30,7 +30,7 @@ Tracks backward and forward links between artifact instances so that the traceab
 | [MIL-003] | MIL | en | it | [MIL-002] | [MIL-004] | [RC-007], [RC-013] |
 | [MIL-004] | MIL | en | it | [MIL-003] | [MIL-005] | [RC-008], [RC-014] |
 | [MIL-005] | MIL | en | it | [MIL-004] | [MIL-006] | [RC-009], [RC-015] |
-| [MIL-006] | MIL | en | it | [MIL-005] | [MIL-007] | [RC-010] |
+| [MIL-006] | MIL | en | it | [MIL-005] | [MIL-007] | [RC-010], [RC-016] |
 | [MIL-007] | MIL | en | it | [MIL-006] | - | [RC-011] |
 | [TM-001] | TM | - | - | [BC-001] | - | - |
 
@@ -85,3 +85,4 @@ Tracks backward and forward links between artifact instances so that the traceab
 [RC-013]: ./reviews/rc-013-mil-003-code.md
 [RC-014]: ./reviews/rc-014-mil-004-code.md
 [RC-015]: ./reviews/rc-015-mil-005-code.md
+[RC-016]: ./reviews/rc-016-mil-006-code.md

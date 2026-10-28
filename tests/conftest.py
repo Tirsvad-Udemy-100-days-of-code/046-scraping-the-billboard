@@ -38,11 +38,21 @@ class FakeMusicService:
     """@brief MusicService returning fixed playlists, or raising a given error."""
 
     def __init__(
-        self, playlists: list[Playlist] | None = None, error: Exception | None = None
+        self,
+        playlists: list[Playlist] | None = None,
+        error: Exception | None = None,
+        video_ids: dict[str, str] | None = None,
+        search_errors: dict[str, Exception] | None = None,
+        add_errors: dict[str, Exception] | None = None,
     ) -> None:
         self._playlists = list(playlists or [])
         self._error = error
+        self._video_ids = video_ids
+        self._search_errors = search_errors or {}
+        self._add_errors = add_errors or {}
         self.created: list[tuple[str, str, str]] = []
+        self.searched: list[tuple[str, str]] = []
+        self.added: list[tuple[str, str]] = []
 
     def create_playlist(self, title: str, description: str, privacy: str) -> str:
         if self._error is not None:
@@ -56,3 +66,16 @@ class FakeMusicService:
         if self._error is not None:
             raise self._error
         return self._playlists
+
+    def search_song(self, title: str, artist: str) -> str | None:
+        self.searched.append((title, artist))
+        if title in self._search_errors:
+            raise self._search_errors[title]
+        if self._video_ids is None:
+            return f"vid-{title}"
+        return self._video_ids.get(title)
+
+    def add_song(self, playlist_id: str, video_id: str) -> None:
+        if video_id in self._add_errors:
+            raise self._add_errors[video_id]
+        self.added.append((playlist_id, video_id))

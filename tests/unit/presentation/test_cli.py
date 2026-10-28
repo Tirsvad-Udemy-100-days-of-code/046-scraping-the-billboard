@@ -26,7 +26,7 @@ def _run(answer: str, source: FakeChartSource) -> tuple[int, list[str], list[str
         prompts.append(prompt)
         return answer
 
-    code = main([], source=source, read=read, write=lines.append)
+    code = main(["--list-only"], source=source, read=read, write=lines.append)
     return code, lines, prompts
 
 
@@ -97,12 +97,12 @@ def test_main_check_login_with_missing_real_file_returns_one(tmp_path: Path) -> 
     assert "ytmusicapi browser" in lines[0]
 
 
-def test_main_without_flag_does_not_use_the_music_service() -> None:
+def test_main_list_only_does_not_use_the_music_service() -> None:
     lines: list[str] = []
     service = FakeMusicService(error=BrowserFileMissingError("must not be called"))
 
     code = main(
-        [],
+        ["--list-only"],
         source=FakeChartSource([Song("T", "A")]),
         music_service=service,
         read=lambda _prompt: "2026-04-18",
@@ -159,3 +159,57 @@ def test_main_create_playlist_returns_one_on_domain_error() -> None:
 
     assert code == 1
     assert lines == ["failed"]
+
+
+def _full(
+    source: FakeChartSource, service: FakeMusicService, answer: str = "2026-04-18"
+) -> tuple[int, list[str], list[float]]:
+    lines: list[str] = []
+    pauses: list[float] = []
+    code = main(
+        [],
+        source=source,
+        music_service=service,
+        read=lambda _prompt: answer,
+        write=lines.append,
+        pause=pauses.append,
+    )
+    return code, lines, pauses
+
+
+def test_main_full_run_adds_songs_and_prints_summary_with_skipped() -> None:
+    source = FakeChartSource([Song("One", "A"), Song("Two", "B"), Song("Three", "C")])
+    service = FakeMusicService(video_ids={"One": "v1", "Three": "v3"})
+
+    code, lines, pauses = _full(source, service)
+
+    assert code == 0
+    assert lines == [
+        'Added 2 of 3 songs to "2026-04-18 Billboard 100"; skipped 1.',
+        "Skipped: Two - B",
+    ]
+    assert len(service.created) == 1
+    assert len(pauses) == 2
+
+
+def test_main_full_run_without_skips_prints_only_summary() -> None:
+    code, lines, _ = _full(FakeChartSource([Song("One", "A")]), FakeMusicService())
+
+    assert code == 0
+    assert lines == ['Added 1 of 1 songs to "2026-04-18 Billboard 100"; skipped 0.']
+
+
+def test_main_full_run_returns_one_for_invalid_date() -> None:
+    code, lines, _ = _full(FakeChartSource([Song("x", "y")]), FakeMusicService(), "nope")
+
+    assert code == 1
+    assert "YYYY-MM-DD" in lines[0]
+
+
+def test_main_full_run_returns_one_on_login_error() -> None:
+    service = FakeMusicService(error=BrowserFileMissingError("browser.json was not found."))
+
+    code, lines, _ = _full(FakeChartSource([Song("x", "y")]), service)
+
+    assert code == 1
+    assert lines == ["browser.json was not found."]

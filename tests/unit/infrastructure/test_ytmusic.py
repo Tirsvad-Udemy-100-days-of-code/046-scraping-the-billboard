@@ -6,12 +6,14 @@ from pathlib import Path
 from typing import Any
 
 import pytest
-from ytmusicapi.exceptions import YTMusicUserError
+from ytmusicapi.exceptions import YTMusicServerError, YTMusicUserError
 
 from musical_time_machine.domain.errors import (
     AuthenticationError,
     BrowserFileMissingError,
     PlaylistCreationError,
+    SongAddError,
+    SongSearchError,
 )
 from musical_time_machine.domain.playlist import Playlist
 from musical_time_machine.infrastructure.ytmusic import YouTubeMusicService, YTMusicLike
@@ -23,7 +25,13 @@ class _FakeClient:
         items: list[dict[str, Any]],
         error: Exception | None = None,
         created: str | dict[str, Any] = "new-id",
+        results: list[dict[str, Any]] | None = None,
+        added: str | dict[str, Any] = "ignored",
     ) -> None:
+        self._results = results or []
+        self._added = added
+        self.searches: list[tuple[str, str | None, int]] = []
+        self.additions: list[tuple[str, list[str] | None, bool]] = []
         self._items = items
         self._error = error
         self._created = created
@@ -37,6 +45,25 @@ class _FakeClient:
         if self._error is not None:
             raise self._error
         return self._created
+
+    def search(
+        self, query: str, filter: str | None = None, limit: int = 20
+    ) -> list[dict[str, Any]]:
+        self.searches.append((query, filter, limit))
+        if self._error is not None:
+            raise self._error
+        return self._results
+
+    def add_playlist_items(
+        self,
+        playlistId: str,  # noqa: N803 - must match the ytmusicapi parameter names
+        videoIds: list[str] | None = None,  # noqa: N803
+        duplicates: bool = False,
+    ) -> str | dict[str, Any]:
+        self.additions.append((playlistId, videoIds, duplicates))
+        if self._error is not None:
+            raise self._error
+        return self._added
 
     def get_library_playlists(self, limit: int | None = 25) -> list[dict[str, Any]]:
         self.limits.append(limit)
@@ -162,3 +189,82 @@ def test_create_playlist_raises_when_browser_file_missing(tmp_path: Path) -> Non
 
     with pytest.raises(BrowserFileMissingError):
         service.create_playlist("T", "D", "PRIVATE")
+
+
+def _service(tmp_path: Path, client: _FakeClient) -> YouTubeMusicService:
+    return YouTubeMusicService(_browser_file(tmp_path), lambda _auth: client)
+
+
+def test_search_song_returns_first_video_id_and_filters_songs(tmp_path: Path) -> None:
+    client = _FakeClient([], results=[{"videoId": "v1"}, {"videoId": "v2"}])
+
+    assert _service(tmp_path, client).search_song("Title", "Artist") == "v1"
+    assert client.searches == [("Title Artist", "songs", 1)]
+
+
+def test_search_song_returns_none_for_no_results(tmp_path: Path) -> None:
+    assert _service(tmp_path, _FakeClient([])).search_song("T", "A") is None
+
+
+def test_search_song_skips_results_without_video_id(tmp_path: Path) -> None:
+    client = _FakeClient([], results=[{"title": "x"}, {"videoId": "v2"}])
+
+    assert _service(tmp_path, client).search_song("T", "A") == "v2"
+
+
+def test_search_song_maps_server_error_to_song_search_error(tmp_path: Path) -> None:
+    error = YTMusicServerError("Server returned HTTP 500: oops")
+    service = _service(tmp_path, _FakeClient([], error))
+
+    with pytest.raises(SongSearchError) as info:
+        service.search_song("T", "A")
+    assert info.value.__cause__ is error
+
+
+@pytest.mark.parametrize(
+    "error",
+    [YTMusicServerError("Server returned HTTP 401: no"), YTMusicUserError("x"), KeyError("k")],
+)
+def test_search_song_keeps_login_failures_as_authentication_error(
+    tmp_path: Path, error: Exception
+) -> None:
+    with pytest.raises(AuthenticationError):
+        _service(tmp_path, _FakeClient([], error)).search_song("T", "A")
+
+
+def test_add_song_sends_one_video_without_duplicates(tmp_path: Path) -> None:
+    client = _FakeClient([], added={"status": "STATUS_SUCCEEDED", "playlistEditResults": []})
+
+    _service(tmp_path, client).add_song("pl", "v1")
+
+    assert client.additions == [("pl", ["v1"], False)]
+
+
+@pytest.mark.parametrize("answer", [{"status": "STATUS_FAILED"}, {"error": "dup"}, "oops"])
+def test_add_song_raises_when_status_is_not_succeeded(
+    tmp_path: Path, answer: str | dict[str, Any]
+) -> None:
+    service = _service(tmp_path, _FakeClient([], added=answer))
+
+    with pytest.raises(SongAddError):
+        service.add_song("pl", "v1")
+
+
+def test_add_song_maps_server_error_to_song_add_error(tmp_path: Path) -> None:
+    error = YTMusicServerError("Server returned HTTP 400: bad")
+
+    with pytest.raises(SongAddError) as info:
+        _service(tmp_path, _FakeClient([], error)).add_song("pl", "v1")
+    assert info.value.__cause__ is error
+
+
+def test_add_song_keeps_login_failure_as_authentication_error(tmp_path: Path) -> None:
+    with pytest.raises(AuthenticationError):
+        _service(tmp_path, _FakeClient([], KeyError("cookie"))).add_song("pl", "v1")
+
+
+def test_search_song_raises_when_browser_file_missing(tmp_path: Path) -> None:
+    service = YouTubeMusicService(tmp_path / "none.json", lambda _auth: _FakeClient([]))
+
+    with pytest.raises(BrowserFileMissingError):
+        service.search_song("T", "A")

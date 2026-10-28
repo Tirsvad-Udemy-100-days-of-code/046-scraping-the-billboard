@@ -2,11 +2,14 @@
 @brief Use cases of the Musical Time Machine.
 """
 
+import time
+from collections.abc import Callable
 from dataclasses import dataclass
 from datetime import date
 
 from musical_time_machine.application.ports import ChartSource, MusicService
-from musical_time_machine.constants import PLAYLIST_PRIVACY
+from musical_time_machine.constants import ADD_PAUSE_SECONDS, PLAYLIST_PRIVACY
+from musical_time_machine.domain.errors import SongAddError, SongSearchError
 from musical_time_machine.domain.playlist import playlist_description, playlist_name
 from musical_time_machine.domain.song import Song
 
@@ -23,6 +26,34 @@ class PlaylistResult:
     playlist_id: str
     title: str
     created: bool
+
+
+@dataclass(frozen=True, slots=True)
+class AddSongsResult:
+    """@brief Outcome of add_songs.
+
+    @param added Number of songs added to the playlist.
+    @param skipped Songs that were not found or could not be added.
+    """
+
+    added: int
+    skipped: list[Song]
+
+
+@dataclass(frozen=True, slots=True)
+class TimeTravelResult:
+    """@brief Outcome of time_travel.
+
+    @param playlist The new or existing playlist.
+    @param added Number of songs added.
+    @param skipped Songs that were not found or could not be added.
+    @param total Number of songs on the chart.
+    """
+
+    playlist: PlaylistResult
+    added: int
+    skipped: list[Song]
+    total: int
 
 
 def scrape_songs(chart_date: date, source: ChartSource) -> list[Song]:
@@ -67,3 +98,60 @@ def create_playlist(chart_date: date, service: MusicService) -> PlaylistResult:
             return PlaylistResult(playlist.playlist_id, title, created=False)
     playlist_id = service.create_playlist(title, playlist_description(chart_date), PLAYLIST_PRIVACY)
     return PlaylistResult(playlist_id, title, created=True)
+
+
+def add_songs(
+    songs: list[Song],
+    playlist_id: str,
+    service: MusicService,
+    *,
+    pause: Callable[[float], None] = time.sleep,
+) -> AddSongsResult:
+    """@brief Search every song and add the found ones to a playlist.
+
+    A song that is not found, or whose search or add fails, is skipped and the
+    run continues. Authentication errors are not caught: they stop the run.
+
+    @param songs The songs in chart order.
+    @param playlist_id Identifier of the target playlist.
+    @param service The music service to ask.
+    @param pause Called with the seconds to wait between two songs.
+    @return The number added and the skipped songs.
+    """
+    added = 0
+    skipped: list[Song] = []
+    for index, song in enumerate(songs):
+        if index > 0:
+            pause(ADD_PAUSE_SECONDS)
+        try:
+            video_id = service.search_song(song.title, song.artist)
+            if video_id is None:
+                skipped.append(song)
+                continue
+            service.add_song(playlist_id, video_id)
+        except (SongSearchError, SongAddError):
+            skipped.append(song)
+            continue
+        added += 1
+    return AddSongsResult(added, skipped)
+
+
+def time_travel(
+    chart_date: date,
+    chart_source: ChartSource,
+    service: MusicService,
+    *,
+    pause: Callable[[float], None] = time.sleep,
+) -> TimeTravelResult:
+    """@brief Scrape the chart, make its playlist and fill it.
+
+    @param chart_date Date of the chart.
+    @param chart_source Where the chart comes from.
+    @param service The music service to ask.
+    @param pause Called with the seconds to wait between two songs.
+    @return The playlist and what was added or skipped.
+    """
+    songs = scrape_songs(chart_date, chart_source)
+    playlist = create_playlist(chart_date, service)
+    added = add_songs(songs, playlist.playlist_id, service, pause=pause)
+    return TimeTravelResult(playlist, added.added, added.skipped, len(songs))
