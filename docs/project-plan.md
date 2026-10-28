@@ -11,7 +11,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-10-28 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | pending |
+| 2026-10-28 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | [01e016e] |
 
 ---
 
@@ -102,3 +102,4 @@ A No-Go on a gateway returns it to rework and moves every later date by the rewo
 [MIL-005]: ./milestones/mil-005-step-3-create-playlist.md
 [MIL-006]: ./milestones/mil-006-step-4-search-and-add-songs.md
 [MIL-007]: ./milestones/mil-007-wiki-and-release.md
+[01e016e]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/commit/01e016e15dd93cface4f4ae9e9e99919e0aace2b

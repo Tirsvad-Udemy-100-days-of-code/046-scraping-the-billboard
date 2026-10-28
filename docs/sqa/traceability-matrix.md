@@ -9,7 +9,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-10-28 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | pending |
+| 2026-10-28 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | [01e016e] |
 
 ---
 
@@ -80,3 +80,4 @@ Tracks backward and forward links between artifact instances so that the traceab
 [RC-009]: ./reviews/rc-009-mil-005.md
 [RC-010]: ./reviews/rc-010-mil-006.md
 [RC-011]: ./reviews/rc-011-mil-007.md
+[01e016e]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/commit/01e016e15dd93cface4f4ae9e9e99919e0aace2b
