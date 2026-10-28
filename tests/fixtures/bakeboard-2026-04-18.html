@@ -1,0 +1,2859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bakeboard Hot 100 - Week of April 18, 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:ital,wght@0,400;0,500;0,600;0,700;1,700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/bakeboard-hot-100/css/style.css">
+</head>
+<body>
+
+  <!-- Zone A: Top navbar -->
+  <nav class="top-nav">
+    <div class="top-nav__inner">
+      <div class="top-nav__left">
+        <span class="top-nav__logo">Bakeboard</span>
+        <ul class="top-nav__links">
+          <li><a href="#">Charts</a></li>
+          <li><a href="#">News</a></li>
+          <li><a href="#">Video</a></li>
+          <li><a href="#">Photos</a></li>
+          <li><a href="#">Pro</a></li>
+          <li><a href="#">Newsletters</a></li>
+        </ul>
+      </div>
+      <div class="top-nav__right">
+        <a href="#" class="top-nav__subscribe">Subscribe</a>
+        <a href="#" class="top-nav__sign-in">Sign In</a>
+        <button class="top-nav__search" aria-label="Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Chart sub-navigation -->
+  <div class="chart-subnav">
+    <div class="chart-subnav__inner">
+      <a href="#" class="chart-subnav__link">Bakeboard 200</a>
+      <a href="#" class="chart-subnav__link chart-subnav__link--active">Hot 100</a>
+      <a href="#" class="chart-subnav__link">Hip-Hop/R&amp;B Songs</a>
+      <a href="#" class="chart-subnav__link">Country Songs</a>
+      <a href="#" class="chart-subnav__link">View All</a>
+    </div>
+  </div>
+
+  <div class="chart-content">
+
+    <!-- Zone B: Chart title and date -->
+    <div class="chart-header">
+      <h1 class="chart-header__title">The Hot 100</h1>
+      <p class="chart-header__date">Week of April 18, 2026</p>
+      <!-- Calendar dropdown (JS-powered, not scraped) -->
+      <div class="cal-backdrop" id="backdrop"></div>
+      <div class="date-trigger-wrapper">
+        <div class="date-trigger" id="trigger">
+          Week of <span class="date-trigger__date" id="trigger-date">April 18, 2026</span>
+          <span class="chevron">&#9660;</span>
+        </div>
+        <div class="cal-dropdown" id="calDropdown">
+          <div class="cal">
+            <div class="cal-header">
+              <span class="cal-month" id="calMonth"></span>
+              <span class="cal-year" id="calYear"></span>
+              <div class="cal-nav">
+                <button id="prevMonth" aria-label="Previous month">&#8249;</button>
+                <button id="nextMonth" aria-label="Next month">&#8250;</button>
+              </div>
+            </div>
+            <div class="cal-dow">
+              <span>Su</span><span>Mo</span><span>Tu</span>
+              <span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+            </div>
+            <div class="cal-grid" id="calGrid"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero video (click thumbnail to play) -->
+    <div class="hero-video" id="heroVideo">
+      <img src="/bakeboard-hot-100/artwork/hero.png" alt="This week's chart highlights" class="hero-video__thumbnail" id="heroThumb">
+      <iframe class="hero-video__player" id="heroPlayer" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <!-- Column headers -->
+    <div class="chart-list__header">
+      <span></span>
+      <span></span>
+      <span class="chart-list__header-label">LAST WEEK</span>
+      <span class="chart-list__header-label">PEAK</span>
+      <span class="chart-list__header-label">WKS ON CHART</span>
+      <span></span>
+    </div>
+
+    <!-- Zone D: Chart entries (scraped by students) -->
+    <div class="chart-list">
+      
+      <div class="chart-entry chart-entry--steady" data-rank="1">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">1</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M1 5H9" stroke="#999" stroke-width="2"/><path d="M6 2L9 5L6 8" stroke="#999" stroke-width="2" fill="none"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Choosin&#39; Texas</h3>
+          <span class="chart-entry__artist">Ella Langley</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">1</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">1</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">25</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/1b6902e9ee95.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="2">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">2</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Man I Need</h3>
+          <span class="chart-entry__artist">Olivia Dean</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">3</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">2</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">33</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/47703f9970b0.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="3">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">3</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">I Just Might</h3>
+          <span class="chart-entry__artist">Bruno Mars</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">4</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">1</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">13</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/ad7630ae3998.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="4">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">4</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Ordinary</h3>
+          <span class="chart-entry__artist">Alex Warren</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">5</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">1</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">60</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/d4085a1a52f9.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--down" data-rank="5">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">5</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 9L1 3H9L5 9Z" fill="#e74c3c"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Swim</h3>
+          <span class="chart-entry__artist">BTS</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">2</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">1</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">3</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/e650835dfb02.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--steady" data-rank="6">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">6</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M1 5H9" stroke="#999" stroke-width="2"/><path d="M6 2L9 5L6 8" stroke="#999" stroke-width="2" fill="none"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">So Easy (To Fall In Love)</h3>
+          <span class="chart-entry__artist">Olivia Dean</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">6</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">6</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">28</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/53ea8034baea.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--steady" data-rank="7">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">7</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M1 5H9" stroke="#999" stroke-width="2"/><path d="M6 2L9 5L6 8" stroke="#999" stroke-width="2" fill="none"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Golden</h3>
+          <span class="chart-entry__artist">HUNTR/X: EJAE, Audrey Nuna &amp; REI AMI</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">7</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">1</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">42</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/d4439193dab2.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="8">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">8</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Be Her</h3>
+          <span class="chart-entry__artist">Ella Langley</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">12</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">8</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">8</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/564acbafc813.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--down" data-rank="9">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">9</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 9L1 3H9L5 9Z" fill="#e74c3c"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Stateside</h3>
+          <span class="chart-entry__artist">PinkPantheress With Zara Larsson</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">8</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">6</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">14</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/7db57e437455.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--steady" data-rank="10">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">10</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M1 5H9" stroke="#999" stroke-width="2"/><path d="M6 2L9 5L6 8" stroke="#999" stroke-width="2" fill="none"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Folded</h3>
+          <span class="chart-entry__artist">Kehlani</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">10</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">6</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">43</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/6abe7cfa2d6b.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--down" data-rank="11">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">11</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 9L1 3H9L5 9Z" fill="#e74c3c"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">The Fate Of Ophelia</h3>
+          <span class="chart-entry__artist">Taylor Swift</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">9</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">1</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">27</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/911d76fc0a85.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--down" data-rank="12">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">12</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 9L1 3H9L5 9Z" fill="#e74c3c"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Where Is My Husband!</h3>
+          <span class="chart-entry__artist">RAYE</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">11</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">11</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">28</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/3a02bf1bc0d5.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="13">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">13</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Sleepless In A Hotel Room</h3>
+          <span class="chart-entry__artist">Luke Combs</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">14</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">11</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">13</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/a251ff2a58a6.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="14">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">14</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Risk It All</h3>
+          <span class="chart-entry__artist">Bruno Mars</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">15</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">4</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">6</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/ae47cdceb4a5.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--down" data-rank="15">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">15</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 9L1 3H9L5 9Z" fill="#e74c3c"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Opalite</h3>
+          <span class="chart-entry__artist">Taylor Swift</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">13</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">1</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">27</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/519d43325283.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--steady" data-rank="16">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">16</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M1 5H9" stroke="#999" stroke-width="2"/><path d="M6 2L9 5L6 8" stroke="#999" stroke-width="2" fill="none"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Babydoll</h3>
+          <span class="chart-entry__artist">Dominic Fike</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">16</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">16</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">9</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/990ac2066c83.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="17">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">17</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Dracula</h3>
+          <span class="chart-entry__artist">Tame Impala &amp; JENNIE</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">18</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">17</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">28</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/4e6c15c6436f.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--down" data-rank="18">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">18</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 9L1 3H9L5 9Z" fill="#e74c3c"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Iloveitiloveitiloveit</h3>
+          <span class="chart-entry__artist">Bella Kay</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">17</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">17</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">8</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/7effdd8d04b8.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--steady" data-rank="19">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">19</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M1 5H9" stroke="#999" stroke-width="2"/><path d="M6 2L9 5L6 8" stroke="#999" stroke-width="2" fill="none"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">E85</h3>
+          <span class="chart-entry__artist">Don Toliver</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">19</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">15</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">10</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/0dee964451dd.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--steady" data-rank="20">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">20</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M1 5H9" stroke="#999" stroke-width="2"/><path d="M6 2L9 5L6 8" stroke="#999" stroke-width="2" fill="none"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Yukon</h3>
+          <span class="chart-entry__artist">Justin Bieber</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">20</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">17</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">39</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/8117577dc700.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="21">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">21</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Be By You</h3>
+          <span class="chart-entry__artist">Luke Combs</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">22</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">12</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">8</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/a0049e093c31.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="22">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">22</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Homewrecker</h3>
+          <span class="chart-entry__artist">sombr</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">25</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">22</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">9</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/831d6889a236.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="23">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">23</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">DTMF</h3>
+          <span class="chart-entry__artist">Bad Bunny</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">24</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">1</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">30</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/9de59995a544.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--down" data-rank="24">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">24</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 9L1 3H9L5 9Z" fill="#e74c3c"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">American Girls</h3>
+          <span class="chart-entry__artist">Harry Styles</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">23</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">4</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">5</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/a6312650666c.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="25">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">25</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Body</h3>
+          <span class="chart-entry__artist">Don Toliver</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">26</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">14</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">10</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/35fc328cae64.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="26">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">26</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">The Fall</h3>
+          <span class="chart-entry__artist">Cody Johnson</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">28</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">26</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">28</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/3402c6e891ea.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="27">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">27</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Change My Mind</h3>
+          <span class="chart-entry__artist">Riley Green</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">30</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">27</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">10</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/847c88b8a170.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="28">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">28</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Die On This Hill</h3>
+          <span class="chart-entry__artist">Sienna Spiro</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">29</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">19</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">16</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/7584178f9b69.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="29">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">29</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Pop Dat Thang</h3>
+          <span class="chart-entry__artist">DaBaby</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">31</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">29</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">10</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/d72bf162b1be.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="30">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">30</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">I Ain&#39;t Coming Back</h3>
+          <span class="chart-entry__artist">Morgan Wallen Featuring Post Malone</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">56</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">8</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">43</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/e7e94bc69438.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--down" data-rank="31">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">31</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 9L1 3H9L5 9Z" fill="#e74c3c"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Father</h3>
+          <span class="chart-entry__artist">Ye &amp; Travis Scott</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">21</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">21</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">2</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/cfd364113691.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="32">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">32</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Fever Dream</h3>
+          <span class="chart-entry__artist">Alex Warren</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">33</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">21</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">6</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/25fa14765f48.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="33">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">33</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Let &#39;Em Know</h3>
+          <span class="chart-entry__artist">T.I.</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">34</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">33</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">11</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/313de5130b0a.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--down" data-rank="34">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">34</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 9L1 3H9L5 9Z" fill="#e74c3c"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">White Keys</h3>
+          <span class="chart-entry__artist">Dominic Fike</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">32</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">32</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">7</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/190dcda0bde1.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="35">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">35</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Lush Life</h3>
+          <span class="chart-entry__artist">Zara Larsson</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">36</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">35</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">17</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/789e4ac637db.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="36">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">36</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Brunette</h3>
+          <span class="chart-entry__artist">Tucker Wetmore</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">45</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">36</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">15</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/9f36e9f9b59d.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--down" data-rank="37">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">37</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 9L1 3H9L5 9Z" fill="#e74c3c"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">All The Love</h3>
+          <span class="chart-entry__artist">Ye &amp; Andre Troutman</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">27</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">27</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">2</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/e9554f23fbb9.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="38">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">38</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Loving Life Again</h3>
+          <span class="chart-entry__artist">Ella Langley</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">46</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">38</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">3</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/3f64df1a643f.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--down" data-rank="39">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">39</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 9L1 3H9L5 9Z" fill="#e74c3c"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">The Great Divide</h3>
+          <span class="chart-entry__artist">Noah Kahan</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">38</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">6</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">10</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/87ce10584510.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--down" data-rank="40">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">40</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 9L1 3H9L5 9Z" fill="#e74c3c"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Days Like These</h3>
+          <span class="chart-entry__artist">Luke Combs</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">39</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">31</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">24</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/bb4301caacb8.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--down" data-rank="41">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">41</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 9L1 3H9L5 9Z" fill="#e74c3c"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">What You Saying</h3>
+          <span class="chart-entry__artist">Lil Uzi Vert</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">37</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">12</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">15</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/f92a461314c3.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="42">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">42</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Earrings</h3>
+          <span class="chart-entry__artist">Malcolm Todd</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">65</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">42</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">6</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/e2920b379338.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--steady" data-rank="43">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">43</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M1 5H9" stroke="#999" stroke-width="2"/><path d="M6 2L9 5L6 8" stroke="#999" stroke-width="2" fill="none"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Midnight Sun</h3>
+          <span class="chart-entry__artist">Zara Larsson</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">43</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">39</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">12</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/97670755043a.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--down" data-rank="44">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">44</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 9L1 3H9L5 9Z" fill="#e74c3c"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Motion Party</h3>
+          <span class="chart-entry__artist">BossMan Dlow</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">41</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">41</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">4</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/144c59a63acd.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--down" data-rank="45">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">45</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 9L1 3H9L5 9Z" fill="#e74c3c"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Elizabeth Taylor</h3>
+          <span class="chart-entry__artist">Taylor Swift</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">35</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">3</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">23</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/479388abf141.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="46">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">46</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Dandelion</h3>
+          <span class="chart-entry__artist">Ella Langley</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">54</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">37</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">10</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/19325346c7cc.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="47">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">47</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">When Did You Get Hot?</h3>
+          <span class="chart-entry__artist">Sabrina Carpenter</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">50</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">17</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">30</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/62acc2ac5d3b.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--new" data-rank="48">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">48</span>
+          <span class="chart-entry__arrow chart-entry__arrow--new">NEW</span>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">FDO</h3>
+          <span class="chart-entry__artist">Pooh Shiesty</span>
+          
+          <span class="chart-entry__badge chart-entry__badge--new">NEW</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">-</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">12</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">16</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/0c0c3f014b85.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="49">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">49</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Raindance</h3>
+          <span class="chart-entry__artist">Dave &amp; Tems</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">52</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">49</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">10</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/1493a8ec9ce4.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--down" data-rank="50">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">50</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 9L1 3H9L5 9Z" fill="#e74c3c"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Porch Light</h3>
+          <span class="chart-entry__artist">Noah Kahan</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">48</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">20</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">4</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/e725d2969f02.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="51">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">51</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Freakin&#39; Out</h3>
+          <span class="chart-entry__artist">Dexter And The Moonrocks</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">77</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">51</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">3</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/ce7362ee9367.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--down" data-rank="52">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">52</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 9L1 3H9L5 9Z" fill="#e74c3c"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Body To Body</h3>
+          <span class="chart-entry__artist">BTS</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">42</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">25</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">3</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/f6b2de4fc481.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="53">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">53</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Ain&#39;t A Bad Life</h3>
+          <span class="chart-entry__artist">Thomas Rhett Featuring Jordan Davis</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">68</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">53</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">10</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/0c93a0c3a8a1.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--down" data-rank="54">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">54</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 9L1 3H9L5 9Z" fill="#e74c3c"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">McArthur</h3>
+          <span class="chart-entry__artist">HARDY, Eric Church, Morgan Wallen &amp; Tim McGraw</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">47</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">31</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">10</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/f732393a819f.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="55">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">55</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">What He&#39;ll Never Have</h3>
+          <span class="chart-entry__artist">Dylan Scott</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">66</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">55</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">6</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/decfc320cc5f.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="56">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">56</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">What You Need</h3>
+          <span class="chart-entry__artist">Tems</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">89</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">56</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">4</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/d16af5d85ca2.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="57">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">57</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">In My Room</h3>
+          <span class="chart-entry__artist">Julia Wolf</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">60</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">57</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">5</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/9edfd7cfa3ae.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--down" data-rank="58">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">58</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 9L1 3H9L5 9Z" fill="#e74c3c"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Chanel</h3>
+          <span class="chart-entry__artist">Tyla</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">53</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">43</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">17</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/91ea7bca0da6.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="59">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">59</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Beautiful Things</h3>
+          <span class="chart-entry__artist">Megan Moroney</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">71</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">32</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">19</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/606e6516bfff.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="60">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">60</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Turn This Truck Around</h3>
+          <span class="chart-entry__artist">Jordan Davis</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">70</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">60</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">6</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/efaf359ca754.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="61">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">61</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Dry Spell</h3>
+          <span class="chart-entry__artist">Kacey Musgraves</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">88</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">55</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">4</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/66d653477983.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="62">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">62</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Don&#39;t We</h3>
+          <span class="chart-entry__artist">Morgan Wallen</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">86</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">48</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">9</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/0e679e4decdf.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="63">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">63</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Go Away</h3>
+          <span class="chart-entry__artist">Weezer</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">83</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">63</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">3</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/88f7e13a9f14.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="64">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">64</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Rein Me In</h3>
+          <span class="chart-entry__artist">Sam Fender &amp; Olivia Dean</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">78</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">64</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">4</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/fd3467b844bd.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--down" data-rank="65">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">65</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 9L1 3H9L5 9Z" fill="#e74c3c"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Rethink Some Things</h3>
+          <span class="chart-entry__artist">Luke Combs</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">55</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">46</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">3</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/d2cad9bd9f67.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--down" data-rank="66">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">66</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 9L1 3H9L5 9Z" fill="#e74c3c"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Aperture</h3>
+          <span class="chart-entry__artist">Harry Styles</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">58</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">1</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">11</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/d5e1dfa5d730.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="67">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">67</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">2.0</h3>
+          <span class="chart-entry__artist">BTS</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">75</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">50</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">3</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/b91aa8daa59a.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--down" data-rank="68">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">68</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 9L1 3H9L5 9Z" fill="#e74c3c"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Time&#39;s Ticking</h3>
+          <span class="chart-entry__artist">Justin Moore</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">63</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">63</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">8</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/d47895816ac2.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="69">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">69</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">The Visitor</h3>
+          <span class="chart-entry__artist">Sienna Spiro</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">80</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">43</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">4</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/043e0d237b70.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="70">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">70</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Who Knows</h3>
+          <span class="chart-entry__artist">Daniel Caesar</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">93</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">52</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">14</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/ec62a99cad3b.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--down" data-rank="71">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">71</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 9L1 3H9L5 9Z" fill="#e74c3c"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Punch Drunk</h3>
+          <span class="chart-entry__artist">Ye</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">44</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">44</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">2</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/d508c846a524.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--down" data-rank="72">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">72</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 9L1 3H9L5 9Z" fill="#e74c3c"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Hooligan</h3>
+          <span class="chart-entry__artist">BTS</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">64</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">35</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">3</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/cd8f1666ed9d.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="73">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">73</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Mrs. Trendsetter</h3>
+          <span class="chart-entry__artist">Lil Baby</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">95</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">64</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">8</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/54ade96cd044.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--new" data-rank="74">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">74</span>
+          <span class="chart-entry__arrow chart-entry__arrow--new">NEW</span>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Jane!</h3>
+          <span class="chart-entry__artist">The Long Faces</span>
+          
+          <span class="chart-entry__badge chart-entry__badge--new">NEW</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">-</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">74</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">1</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="75">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">75</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Dano</h3>
+          <span class="chart-entry__artist">Peso Pluma &amp; Tito Double P</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">92</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">75</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">7</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/6bda6922574f.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--steady" data-rank="76">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">76</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M1 5H9" stroke="#999" stroke-width="2"/><path d="M6 2L9 5L6 8" stroke="#999" stroke-width="2" fill="none"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Ends Of The Earth</h3>
+          <span class="chart-entry__artist">Ty Myers</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">76</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">72</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">12</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/b1711a0412cd.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="77">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">77</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Zoo</h3>
+          <span class="chart-entry__artist">Shakira</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">91</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">73</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">9</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/052b8c48d8e9.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--down" data-rank="78">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">78</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 9L1 3H9L5 9Z" fill="#e74c3c"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Whatever Works</h3>
+          <span class="chart-entry__artist">Ye</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">49</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">49</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">2</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/0c49c3a6ab1e.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--down" data-rank="79">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">79</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 9L1 3H9L5 9Z" fill="#e74c3c"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">King</h3>
+          <span class="chart-entry__artist">Ye</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">40</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">40</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">2</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/1f319406cd08.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--new" data-rank="80">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">80</span>
+          <span class="chart-entry__arrow chart-entry__arrow--new">NEW</span>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Say Why</h3>
+          <span class="chart-entry__artist">Zach Bryan</span>
+          
+          <span class="chart-entry__badge chart-entry__badge--new">NEW</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">-</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">25</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">12</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/f70894c8298e.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--down" data-rank="81">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">81</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 9L1 3H9L5 9Z" fill="#e74c3c"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Coming Up Roses</h3>
+          <span class="chart-entry__artist">Harry Styles</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">79</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">18</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">5</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/81889f96eae8.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--down" data-rank="82">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">82</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 9L1 3H9L5 9Z" fill="#e74c3c"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Normal</h3>
+          <span class="chart-entry__artist">BTS</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">73</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">41</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">3</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/2e6900b5e90d.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--new" data-rank="83">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">83</span>
+          <span class="chart-entry__arrow chart-entry__arrow--new">NEW</span>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Ever Since U Left Me</h3>
+          <span class="chart-entry__artist">Max B &amp; French Montana</span>
+          
+          <span class="chart-entry__badge chart-entry__badge--new">NEW</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">-</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">83</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">3</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/b0df59bf40d3.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--new" data-rank="84">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">84</span>
+          <span class="chart-entry__arrow chart-entry__arrow--new">NEW</span>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Rocky Mountain Low</h3>
+          <span class="chart-entry__artist">Corey Kent &amp; Koe Wetzel</span>
+          
+          <span class="chart-entry__badge chart-entry__badge--new">NEW</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">-</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">84</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">3</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/6a20f7eb9895.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--new" data-rank="85">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">85</span>
+          <span class="chart-entry__arrow chart-entry__arrow--new">NEW</span>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Tuition</h3>
+          <span class="chart-entry__artist">Don Toliver</span>
+          
+          <span class="chart-entry__badge chart-entry__badge--new">NEW</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">-</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">60</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">2</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/c4d891f1b167.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--new" data-rank="86">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">86</span>
+          <span class="chart-entry__arrow chart-entry__arrow--new">NEW</span>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Tiramisu</h3>
+          <span class="chart-entry__artist">Don Toliver</span>
+          
+          <span class="chart-entry__badge chart-entry__badge--new">NEW</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">-</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">35</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">10</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/241a987f5918.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="87">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">87</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Plastic Cigarette</h3>
+          <span class="chart-entry__artist">Zach Bryan</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">100</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">13</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">12</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/25625234f103.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--up" data-rank="88">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">88</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 1L9 7H1L5 1Z" fill="#27ae60"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Silent Treatment</h3>
+          <span class="chart-entry__artist">Freya Skye</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">98</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">88</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">2</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/f9db8d2ffd0a.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--new" data-rank="89">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">89</span>
+          <span class="chart-entry__arrow chart-entry__arrow--new">NEW</span>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Hate How You Look</h3>
+          <span class="chart-entry__artist">Josh Ross</span>
+          
+          <span class="chart-entry__badge chart-entry__badge--new">NEW</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">-</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">89</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">1</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--down" data-rank="90">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">90</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 9L1 3H9L5 9Z" fill="#e74c3c"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">FYA</h3>
+          <span class="chart-entry__artist">BTS</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">74</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">36</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">3</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/3ded18946e26.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--new" data-rank="91">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">91</span>
+          <span class="chart-entry__arrow chart-entry__arrow--new">NEW</span>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Self Aware</h3>
+          <span class="chart-entry__artist">Temper City</span>
+          
+          <span class="chart-entry__badge chart-entry__badge--new">NEW</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">-</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">91</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">1</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--new" data-rank="92">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">92</span>
+          <span class="chart-entry__arrow chart-entry__arrow--new">NEW</span>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Girl You&#39;re Taking Home</h3>
+          <span class="chart-entry__artist">Ella Langley</span>
+          
+          <span class="chart-entry__badge chart-entry__badge--new">NEW</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">-</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">92</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">1</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--new" data-rank="93">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">93</span>
+          <span class="chart-entry__arrow chart-entry__arrow--new">NEW</span>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Butterflies.</h3>
+          <span class="chart-entry__artist">Brent Faiyaz</span>
+          
+          <span class="chart-entry__badge chart-entry__badge--new">NEW</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">-</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">48</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">7</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/23fb089a284f.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--new" data-rank="94">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">94</span>
+          <span class="chart-entry__arrow chart-entry__arrow--new">NEW</span>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Be Like A Woman</h3>
+          <span class="chart-entry__artist">Chris Rainbow</span>
+          
+          <span class="chart-entry__badge chart-entry__badge--new">NEW</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">-</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">94</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">1</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--new" data-rank="95">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">95</span>
+          <span class="chart-entry__arrow chart-entry__arrow--new">NEW</span>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Boston</h3>
+          <span class="chart-entry__artist">STELLA LEFTY</span>
+          
+          <span class="chart-entry__badge chart-entry__badge--new">NEW</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">-</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">95</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">1</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--new" data-rank="96">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">96</span>
+          <span class="chart-entry__arrow chart-entry__arrow--new">NEW</span>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Can&#39;t Sit Still</h3>
+          <span class="chart-entry__artist">Lainey Wilson</span>
+          
+          <span class="chart-entry__badge chart-entry__badge--new">NEW</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">-</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">82</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">2</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/e9ae97999096.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--new" data-rank="97">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">97</span>
+          <span class="chart-entry__arrow chart-entry__arrow--new">NEW</span>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Secondhand</h3>
+          <span class="chart-entry__artist">Don Toliver Featuring Rema</span>
+          
+          <span class="chart-entry__badge chart-entry__badge--new">NEW</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">-</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">29</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">9</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/f719309765ef.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--down" data-rank="98">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">98</span>
+          <svg class="chart-entry__arrow" width="10" height="10" viewBox="0 0 10 10"><path d="M5 9L1 3H9L5 9Z" fill="#e74c3c"/></svg>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">This A Must</h3>
+          <span class="chart-entry__artist">Ye</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">51</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">51</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">2</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"><img src="/bakeboard-hot-100/artwork/49a797581be3.jpg" alt="" loading="lazy" width="50" height="50"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--new" data-rank="99">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">99</span>
+          <span class="chart-entry__arrow chart-entry__arrow--new">NEW</span>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Say So</h3>
+          <span class="chart-entry__artist">Dan + Shay</span>
+          
+          <span class="chart-entry__badge chart-entry__badge--new">NEW</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">-</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">99</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">1</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"></div>
+      </div>
+      
+      <div class="chart-entry chart-entry--new" data-rank="100">
+        <div class="chart-entry__rank">
+          <span class="chart-entry__rank-number">100</span>
+          <span class="chart-entry__arrow chart-entry__arrow--new">NEW</span>
+        </div>
+        <div class="chart-entry__info">
+          <h3 class="chart-entry__title">Sweet Boy</h3>
+          <span class="chart-entry__artist">Malcolm Todd</span>
+          
+          <span class="chart-entry__badge chart-entry__badge--new">NEW</span>
+          
+        </div>
+        <div class="chart-entry__stats">
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">LW</span>
+            <span class="chart-entry__stat-value" data-stat="last-week">-</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">PEAK</span>
+            <span class="chart-entry__stat-value" data-stat="peak">100</span>
+          </div>
+          <div class="chart-entry__stat">
+            <span class="chart-entry__stat-label">WKS</span>
+            <span class="chart-entry__stat-value" data-stat="weeks-on-chart">1</span>
+          </div>
+        </div>
+        <div class="chart-entry__image"></div>
+      </div>
+      
+    </div>
+
+    <!-- Zone E: Footer -->
+    <footer class="site-footer">
+      <p>This is a practice website for educational purposes only. Not affiliated
+        with Billboard or Luminate. Song data sourced from public datasets.</p>
+    </footer>
+
+  </div>
+
+  <!-- Calendar: per-page config (data only), then shared widget script -->
+  <script>
+    const AVAILABLE_DATES = ["1959-01-26", "1960-10-10", "1961-04-24", "1962-12-22", "1963-05-25", "1963-12-28", "1970-08-01", "1970-08-15", "1971-09-18", "1971-10-30", "1972-01-01", "1974-04-13", "1974-07-27", "1978-04-15", "1980-02-16", "1980-07-12", "1983-02-19", "1983-11-26", "1984-04-28", "1985-06-15", "1988-03-26", "1988-04-16", "1988-10-22", "1989-12-02", "1990-11-10", "1991-10-26", "1991-11-30", "1992-01-04", "1993-01-23", "1994-03-26", "1995-03-11", "1995-06-17", "1996-08-10", "1996-09-07", "1996-10-05", "1997-01-18", "1997-06-21", "1999-01-09", "2000-08-12", "2000-11-18", "2001-05-12", "2001-07-14", "2001-07-21", "2001-12-22", "2002-06-08", "2003-03-08", "2003-10-04", "2004-06-19", "2004-07-24", "2005-06-11", "2005-09-03", "2005-10-01", "2007-02-03", "2007-02-24", "2007-06-02", "2007-06-16", "2008-11-22", "2010-08-14", "2011-02-05", "2011-04-16", "2011-05-28", "2013-03-16", "2013-05-11", "2014-02-08", "2014-04-19", "2014-06-28", "2014-10-18", "2015-03-28", "2015-04-04", "2015-04-18", "2016-03-12", "2016-05-14", "2016-12-17", "2017-04-08", "2017-06-10", "2017-11-11", "2019-01-26", "2020-08-15", "2021-05-15", "2021-05-29", "2022-01-29", "2022-06-04", "2022-07-30", "2022-08-06", "2023-02-04", "2023-11-18", "2024-06-29", "2024-11-23", "2025-04-12", "2025-07-05", "2025-07-26", "2025-09-27", "2026-02-07", "2026-02-14", "2026-02-21", "2026-02-28", "2026-03-07", "2026-03-14", "2026-03-21", "2026-03-28", "2026-04-04", "2026-04-11", "2026-04-18"];
+    const CURRENT_CHART_DATE = "2026-04-18";
+    const BASE_PATH = "/bakeboard-hot-100";
+  </script>
+  <script src="/bakeboard-hot-100/js/calendar.js"></script>
+  <script>
+    document.getElementById("heroThumb").addEventListener("click", function() {
+      var player = document.getElementById("heroPlayer");
+      player.src = "https://www.youtube.com/embed/dQw4w9WgXcQ?si=2BH12igGDxyJNCvs&autoplay=1";
+      document.getElementById("heroVideo").classList.add("playing");
+    });
+  </script>
+
+</body>
+</html>

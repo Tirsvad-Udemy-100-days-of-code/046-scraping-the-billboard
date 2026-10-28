@@ -27,7 +27,7 @@ Tracks backward and forward links between artifact instances so that the traceab
 | [GOV-001] | GOV | en | it | [BC-001], [SA-001] | [TM-001] | [RC-004] |
 | [MIL-001] | MIL | en | it | [BC-001], [PP-001] | [MIL-002] | [RC-005] |
 | [MIL-002] | MIL | en | it | [MIL-001] | [MIL-003] | [RC-006], [RC-012] |
-| [MIL-003] | MIL | en | it | [MIL-002] | [MIL-004] | [RC-007] |
+| [MIL-003] | MIL | en | it | [MIL-002] | [MIL-004] | [RC-007], [RC-013] |
 | [MIL-004] | MIL | en | it | [MIL-003] | [MIL-005] | [RC-008] |
 | [MIL-005] | MIL | en | it | [MIL-004] | [MIL-006] | [RC-009] |
 | [MIL-006] | MIL | en | it | [MIL-005] | [MIL-007] | [RC-010] |
@@ -82,3 +82,4 @@ Tracks backward and forward links between artifact instances so that the traceab
 [RC-011]: ./reviews/rc-011-mil-007.md
 [01e016e]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/commit/01e016e15dd93cface4f4ae9e9e99919e0aace2b
 [RC-012]: ./reviews/rc-012-mil-002-code.md
+[RC-013]: ./reviews/rc-013-mil-003-code.md

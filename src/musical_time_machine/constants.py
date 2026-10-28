@@ -45,6 +45,33 @@ SELECTOR_TITLE: Final[str] = "h3.chart-entry__title"
 SELECTOR_ARTIST: Final[str] = "span.chart-entry__artist"
 ## @}
 
+## @name Command line
+## @{
+
+## @brief Prompt asking for the chart date.
+DATE_PROMPT: Final[str] = (
+    "Which year do you want to travel to? Type the date in this format YYYY-MM-DD: "
+)
+
+## @brief Message for a date that is not YYYY-MM-DD; format with the entered text.
+INVALID_DATE_MESSAGE: Final[str] = "'{text}' is not a valid date; use the format YYYY-MM-DD."
+
+## @brief Message when the chart page cannot be fetched; format with the cause.
+CHART_UNAVAILABLE_MESSAGE: Final[str] = "The chart could not be fetched: {reason}"
+
+## @brief Message when the page holds no songs; format with the chart date.
+CHART_PARSE_MESSAGE: Final[str] = "No songs were found on the chart page for {date}."
+
+## @brief Line format of the printed song list.
+SONG_LINE_TEMPLATE: Final[str] = "{position}. {title} - {artist}"
+
+## @brief Process exit code on success.
+EXIT_OK: Final[int] = 0
+
+## @brief Process exit code when a domain error stopped the run.
+EXIT_FAILURE: Final[int] = 1
+## @}
+
 ## @name YouTube Music
 ## @{
 

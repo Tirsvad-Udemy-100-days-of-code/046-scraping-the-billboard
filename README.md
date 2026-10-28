@@ -81,12 +81,28 @@ The program is added step by step (one pull request per lecture step):
 
 | Step | Status |
 | --- | --- |
-| 1. Scrape the Billboard Hot 100 | planned in milestone 3 |
+| 1. Scrape the Billboard Hot 100 | done (below) |
 | 2. YouTube Music authentication | planned in milestone 4 |
 | 3. Create the playlist | planned in milestone 5 |
 | 4. Search and add songs | planned in milestone 6 |
 
-The run command and a screenshot for each step are added with the step.
+### Step 1 - Scrape the Billboard Hot 100
+
+```bash
+python -m musical_time_machine
+```
+
+The program asks for a date in the format `YYYY-MM-DD` and prints the 100 songs of that chart as `rank. title - artist`. Use a date that Bakeboard has, for example `2026-04-18`. `scrape_titles` returns the titles as a Python list; a date in the wrong format or a chart that does not exist ends the program with a clear message.
+
+The chart page on Bakeboard:
+
+![The Bakeboard Hot 100 page for 2026-04-18](docs/wiki/images/step1-bakeboard-page.png)
+
+The program's output for the same date (rendered from the real output of the run, not a photo of a terminal window):
+
+![Output of step 1 for 2026-04-18](docs/wiki/images/step1-terminal-output.png)
+
+The screenshots and the instructions of the next steps are added with each step.
 
 ## 🧪 Tests
 

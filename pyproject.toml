@@ -19,6 +19,9 @@ dev = [
     "ruff>=0.17",
 ]
 
+[project.scripts]
+musical-time-machine = "musical_time_machine.presentation.cli:main"
+
 [tool.setuptools.packages.find]
 where = ["src"]
 
