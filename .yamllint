@@ -1,0 +1,8 @@
+# yamllint configuration of this project (QC-YML-001, criterion 3).
+---
+extends: default
+rules:
+  line-length:
+    max: 100
+  truthy:
+    check-keys: false
