@@ -27,4 +27,4 @@ Setiap pemalar berada dalam `constants.py`. Ujian menggunakan salinan tersimpan 
 
 ## Tangkapan skrin
 
-Tangkapan skrin langkah 1 ialah larian sebenar. Tangkapan skrin langkah 2 hingga 4 menunjukkan larian tanpa `browser.json` dan ujian dengan YouTube Music tiruan; tangkapan skrin langsung akan ditambah apabila penulis telah mencipta `browser.json`.
+Setiap langkah mempunyai tangkapan skrin larian sebenar. Bagi langkah 2 hingga 4, larian sebenar menggunakan `browser.json` penulis (ia tidak pernah diterbitkan), dan tangkapan skrin kedua menunjukkan ujian dengan YouTube Music tiruan.

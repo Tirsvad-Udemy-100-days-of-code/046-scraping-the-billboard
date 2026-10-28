@@ -10,7 +10,11 @@ Programmet opretter en privat playliste med navnet `{date} Billboard 100`, for e
 python -m musical_time_machine --create-playlist
 ```
 
-Skærmbilledet viser testene til dette trin med en falsk YouTube Music-tjeneste: det første kald opretter én playliste, og det andet kald for samme dato opretter ingen. Et rigtigt skærmbillede tilføjes, når `browser.json` findes.
+En rigtig kørsel med forfatterens `browser.json`: første kørsel opretter playlisten, anden kørsel opretter ingenting:
+
+![Rigtig kørsel: playlisten oprettes to gange](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/wiki/images/step3-live-create-playlist.png)
+
+Skærmbilledet viser testene til dette trin med en falsk YouTube Music-tjeneste: det første kald opretter én playliste, og det andet kald for samme dato opretter ingen.
 
 ![Tests af trin 3: playlisten oprettes én gang](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/wiki/images/step3-create-playlist.png)
 

@@ -43,6 +43,8 @@ python -m pip install -e ".[dev]"
 
 Fail ini mengandungi kuki anda: ia diabaikan oleh git dan tidak boleh dikongsi sama sekali. Kuki akan tamat tempoh selepas beberapa lama; ulangi langkah-langkah ini untuk mendapatkan fail yang baharu.
 
+**Jika `--check-login` berkata `Expecting value`**, fail itu mengandungi entri yang bukan pengepala permintaan (salinan daripada Chrome boleh menambah `Request URL`, `Decoded`, `music.youtube.com`, satu laluan atau `content-encoding`). Salin hanya blok **Request Headers**, atau gunakan *Copy Request Headers* Firefox, dan cipta fail itu semula.
+
 ## Jalankan
 
 ```bash

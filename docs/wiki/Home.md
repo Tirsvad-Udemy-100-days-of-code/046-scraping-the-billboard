@@ -27,4 +27,4 @@ Every constant is in `constants.py`. The tests use a stored copy of the chart pa
 
 ## Screenshots
 
-The screenshots of step 1 are a real run. The screenshots of steps 2 to 4 show the run without `browser.json` and the tests with a fake YouTube Music; live screenshots are added when the author has created `browser.json`.
+Every step has a screenshot of a real run. For steps 2 to 4 the live run uses the author's `browser.json` (it is never published), and a second screenshot shows the tests with a fake YouTube Music.

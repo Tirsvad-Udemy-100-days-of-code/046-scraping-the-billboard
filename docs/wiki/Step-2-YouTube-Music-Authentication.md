@@ -12,7 +12,11 @@ python -m musical_time_machine --check-login
 
 On success it prints `Found N playlists in your library.` Without a valid `browser.json` it prints the renewal steps and exits with code 1, instead of a stack trace.
 
-The screenshot shows the run **without** `browser.json` and the tests that use a fake YouTube Music. A live screenshot is added when `browser.json` exists.
+A live run with the author's `browser.json` (the output shows only the count, never the names of the playlists):
+
+![Live login check](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/wiki/images/step2-live-check-login.png)
+
+The screenshot shows the run **without** `browser.json` and the tests that use a fake YouTube Music.
 
 ![Login check without browser.json, and the step 2 tests](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/wiki/images/step2-check-login.png)
 

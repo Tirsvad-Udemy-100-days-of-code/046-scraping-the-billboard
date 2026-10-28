@@ -75,6 +75,8 @@ Leave out `[dev]` when you only want to run the program.
 
 The cookies expire after a while; repeat the steps to get a fresh file.
 
+If `--check-login` says `Expecting value`, the file holds entries that are not request headers (a Chrome copy can add `Request URL`, `Decoded`, `music.youtube.com`, a path entry or `content-encoding`). Copy only the **Request Headers** block, or use Firefox's *Copy Request Headers*, and create the file again.
+
 ## ▶️ Run
 
 The program is added step by step (one pull request per lecture step):
@@ -82,9 +84,9 @@ The program is added step by step (one pull request per lecture step):
 | Step | Status |
 | --- | --- |
 | 1. Scrape the Billboard Hot 100 | done (below) |
-| 2. YouTube Music authentication | code done; live screenshot waits for `browser.json` |
-| 3. Create the playlist | code done; live screenshot waits for `browser.json` |
-| 4. Search and add songs | code done; live screenshot waits for `browser.json` |
+| 2. YouTube Music authentication | done, with a live run screenshot |
+| 3. Create the playlist | done, with a live run screenshot |
+| 4. Search and add songs | done, with a live run screenshot |
 
 ### Step 1 - Scrape the Billboard Hot 100
 
@@ -112,7 +114,11 @@ python -m musical_time_machine --check-login
 
 It prints `Found N playlists in your library.`. With no or an expired `browser.json` it prints the renewal steps and exits with code 1 instead of a stack trace. `--browser-file PATH` uses another file.
 
-The screenshot below shows the run **without** a `browser.json` and the tests that use a fake YouTube Music service. A screenshot of a live login is added once the file exists (issue 22 stays open until then); the file holds personal cookies and is never committed.
+A live run with the author's `browser.json` (the output shows only the count, never playlist names):
+
+![Live login check](docs/wiki/images/step2-live-check-login.png)
+
+The file holds personal cookies and is never committed. The next screenshot shows the run **without** a `browser.json` and the tests that use a fake YouTube Music service:
 
 ![Login check without browser.json and the step 2 tests](docs/wiki/images/step2-check-login.png)
 
@@ -124,7 +130,11 @@ python -m musical_time_machine --create-playlist
 
 It asks for the date and creates the private playlist `YYYY-MM-DD Billboard 100` in your YouTube Music library. It first looks through `get_library_playlists()` for a playlist with the same title, so a second run for the same date creates nothing and says so.
 
-The screenshot shows the tests of this step, which use a fake YouTube Music service (no account needed). A screenshot of the live playlist is added once `browser.json` exists (issue 27 stays open until then).
+A live run with the author's `browser.json`: the first run creates the playlist, the second run creates nothing:
+
+![Live: create the playlist twice](docs/wiki/images/step3-live-create-playlist.png)
+
+The next screenshot shows the tests of this step, which use a fake YouTube Music service (no account needed):
 
 ![Tests of step 3: the playlist is created once](docs/wiki/images/step3-create-playlist.png)
 
@@ -136,7 +146,11 @@ python -m musical_time_machine
 
 The full program: it asks for the date, scrapes the chart, creates the playlist (or reuses the existing one), then searches YouTube Music for each song (`yt.search(..., filter="songs")`) and adds the top result with `yt.add_playlist_items()`. A song that is not found or fails is skipped and the run goes on; the summary says how many songs were added and which were skipped. A failed login stops the run, because every following song would fail too. Use `--list-only` to print the chart without logging in (step 1).
 
-The screenshot shows the tests of this step with a fake YouTube Music service. A screenshot of the live playlist is added once `browser.json` exists (issue 34 stays open until then).
+A live run with the author's `browser.json`: all 100 songs were added:
+
+![Live: the full program](docs/wiki/images/step4-live-add-songs.png)
+
+The next screenshot shows the tests of this step with a fake YouTube Music service:
 
 ![Tests of step 4: songs are added and a failing song is skipped](docs/wiki/images/step4-add-songs.png)
 

@@ -10,7 +10,11 @@ For every song of the chart the program searches YouTube Music with the title an
 python -m musical_time_machine
 ```
 
-The screenshot shows the tests of this step with a fake YouTube Music: all songs are added, and a failing song is skipped without stopping the run. A live screenshot is added when `browser.json` exists.
+A live run with the author's `browser.json`: all 100 songs were added:
+
+![Live: the full program](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/wiki/images/step4-live-add-songs.png)
+
+The screenshot shows the tests of this step with a fake YouTube Music: all songs are added, and a failing song is skipped without stopping the run.
 
 ![Tests of step 4: songs are added and a failing song is skipped](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/wiki/images/step4-add-songs.png)
 

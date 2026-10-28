@@ -10,7 +10,11 @@ The program creates a private playlist named `{date} Billboard 100`, for example
 python -m musical_time_machine --create-playlist
 ```
 
-The screenshot shows the tests of this step with a fake YouTube Music: the first call creates one playlist, the second call for the same date creates none. A live screenshot is added when `browser.json` exists.
+A live run with the author's `browser.json`: the first run creates the playlist, the second run creates nothing:
+
+![Live: create the playlist twice](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/wiki/images/step3-live-create-playlist.png)
+
+The screenshot shows the tests of this step with a fake YouTube Music: the first call creates one playlist, the second call for the same date creates none.
 
 ![Tests of step 3: the playlist is created once](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/wiki/images/step3-create-playlist.png)
 

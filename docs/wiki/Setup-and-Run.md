@@ -43,6 +43,8 @@ python -m pip install -e ".[dev]"
 
 The file contains your cookies: it is ignored by git and must never be shared. The cookies expire after a while; repeat the steps for a fresh file.
 
+**If `--check-login` says `Expecting value`**, the file holds entries that are not request headers (a Chrome copy can add `Request URL`, `Decoded`, `music.youtube.com`, a path entry or `content-encoding`). Copy only the **Request Headers** block, or use Firefox's *Copy Request Headers*, and create the file again.
+
 ## Run
 
 ```bash
