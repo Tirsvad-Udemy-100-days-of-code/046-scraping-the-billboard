@@ -9,7 +9,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-10-28 | Proposed | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | pending |
+| 2026-10-28 | Proposed | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | [2cb7e16] |
 
 ---
 
@@ -59,3 +59,4 @@ Go — every Mandatory criterion passes or does not apply; no blocking finding.
 
 [MIL-003]: ../../milestones/mil-003-step-1-scrape-billboard.md
 [QC-PY-001]: ../../../framework/qc/code/qc-programming-python.md
+[2cb7e16]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/commit/2cb7e1679843ef1cd17fb612048162f661684417
