@@ -1,0 +1,41 @@
+# Publish the wiki pages of docs/wiki/ to the wiki of this repository.
+#
+# Purpose:  keep the wiki (English, Danish, Bahasa Melayu) equal to the folder.
+# Tool:     Gitea Actions; calls the reusable workflow
+#           TirSystem/git-workflows publish-wiki-pages (same release policy as
+#           the framework: the major tag v1 only receives compatible changes).
+# Triggers: a push to main that changes docs/wiki/ (the protected branch);
+#           there is no manual trigger, so no run can change the wiki by accident.
+# Input:    wiki_dir docs/wiki; prune "true" deletes wiki pages that are not in
+#           the folder.
+# Secret:   TOKEN_FOR_GITEA_WIKI, an organization secret with the scope
+#           write:repository (framework/templates/ci/publish-wiki.yml, step 1).
+# Changes outside the repository: the wiki of this repository.
+# Decision: MIL-007 (docs/milestones/mil-007-wiki-and-release.md), task 5.
+
+---
+name: Publish wiki
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "docs/wiki/**"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish-wiki
+  cancel-in-progress: false
+
+jobs:
+  wiki:
+    name: Publish wiki pages
+    uses: TirSystem/git-workflows/.gitea/workflows/publish-wiki-pages.yml@v1
+    with:
+      wiki_dir: docs/wiki
+      prune: "true"
+    secrets:
+      TOKEN_FOR_GITEA_WIKI: ${{ secrets.TOKEN_FOR_GITEA_WIKI }}

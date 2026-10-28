@@ -30,7 +30,7 @@ Layout of the repository:
 | `tests/` | The automated tests (pytest); they use a stored chart page and a fake music service, never the network |
 | `docs/` | Business case, plan, milestones, reviews and the wiki sources |
 
-The wiki is written in English, Danish and Bahasa Malaysia and explains what each lecture step teaches.
+The wiki (`docs/wiki/`, published to the repository wiki) is written in English, Danish and Bahasa Malaysia and explains what each lecture step teaches: [English](docs/wiki/Home.md), [Dansk](docs/wiki/Home-da.md), [Bahasa Melayu](docs/wiki/Home-ms.md).
 
 ## 📋 Requirements
 
