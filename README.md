@@ -84,12 +84,12 @@ The program is added step by step (one pull request per lecture step):
 | 1. Scrape the Billboard Hot 100 | done (below) |
 | 2. YouTube Music authentication | code done; live screenshot waits for `browser.json` |
 | 3. Create the playlist | code done; live screenshot waits for `browser.json` |
-| 4. Search and add songs | planned in milestone 6 |
+| 4. Search and add songs | code done; live screenshot waits for `browser.json` |
 
 ### Step 1 - Scrape the Billboard Hot 100
 
 ```bash
-python -m musical_time_machine
+python -m musical_time_machine --list-only
 ```
 
 The program asks for a date in the format `YYYY-MM-DD` and prints the 100 songs of that chart as `rank. title - artist`. Use a date that Bakeboard has, for example `2026-04-18`. `scrape_titles` returns the titles as a Python list; a date in the wrong format or a chart that does not exist ends the program with a clear message.
@@ -128,7 +128,17 @@ The screenshot shows the tests of this step, which use a fake YouTube Music serv
 
 ![Tests of step 3: the playlist is created once](docs/wiki/images/step3-create-playlist.png)
 
-The screenshots and the instructions of the next steps are added with each step.
+### Step 4 - Search and add songs
+
+```bash
+python -m musical_time_machine
+```
+
+The full program: it asks for the date, scrapes the chart, creates the playlist (or reuses the existing one), then searches YouTube Music for each song (`yt.search(..., filter="songs")`) and adds the top result with `yt.add_playlist_items()`. A song that is not found or fails is skipped and the run goes on; the summary says how many songs were added and which were skipped. A failed login stops the run, because every following song would fail too. Use `--list-only` to print the chart without logging in (step 1).
+
+The screenshot shows the tests of this step with a fake YouTube Music service. A screenshot of the live playlist is added once `browser.json` exists (issue 34 stays open until then).
+
+![Tests of step 4: songs are added and a failing song is skipped](docs/wiki/images/step4-add-songs.png)
 
 ## 🧪 Tests
 

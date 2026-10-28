@@ -8,18 +8,26 @@ from pathlib import Path
 from typing import Any, Protocol
 
 from ytmusicapi import YTMusic
-from ytmusicapi.exceptions import YTMusicError
+from ytmusicapi.exceptions import YTMusicError, YTMusicServerError
 
 from musical_time_machine.constants import (
+    AUTH_HTTP_CODES,
     BROWSER_FILE_MISSING_REASON,
     BROWSER_FILE_NAME,
     BROWSER_RENEWAL_MESSAGE,
     PLAYLIST_CREATION_FAILED_MESSAGE,
+    SEARCH_FILTER,
+    SEARCH_LIMIT,
+    SONG_ADD_FAILED_MESSAGE,
+    SONG_SEARCH_FAILED_MESSAGE,
+    STATUS_SUCCEEDED,
 )
 from musical_time_machine.domain.errors import (
     AuthenticationError,
     BrowserFileMissingError,
     PlaylistCreationError,
+    SongAddError,
+    SongSearchError,
 )
 from musical_time_machine.domain.playlist import Playlist
 
@@ -46,6 +54,24 @@ class YTMusicLike(Protocol):
         privacy_status: str = ...,
     ) -> str | dict[str, Any]:  # the id on success, an error dictionary on failure
         """@brief Create a playlist; returns its id or an error dictionary."""
+        ...
+
+    def search(
+        self,
+        query: str,
+        filter: str | None = ...,
+        limit: int = ...,
+    ) -> list[dict[str, Any]]:  # ytmusicapi returns untyped JSON dictionaries
+        """@brief Search YouTube Music; returns the raw results."""
+        ...
+
+    def add_playlist_items(
+        self,
+        playlistId: str,  # noqa: N803 - must match the ytmusicapi parameter names
+        videoIds: list[str] | None = ...,  # noqa: N803
+        duplicates: bool = ...,
+    ) -> str | dict[str, Any]:  # a status dictionary, or the raw answer on failure
+        """@brief Add videos to a playlist; returns the status answer."""
         ...
 
 
@@ -103,6 +129,57 @@ class YouTubeMusicService:
         if not isinstance(result, str):
             raise PlaylistCreationError(PLAYLIST_CREATION_FAILED_MESSAGE.format(reason=result))
         return result
+
+    def search_song(self, title: str, artist: str) -> str | None:
+        """@brief Find the top song result for a title and artist.
+
+        @param title Song title.
+        @param artist Performing artist.
+        @return The video id of the first song result, or None when nothing was found.
+        @throws BrowserFileMissingError when the browser file does not exist.
+        @throws AuthenticationError when YouTube Music rejects the headers.
+        @throws SongSearchError when the search fails.
+        """
+        client = self._connect()
+        try:
+            results = client.search(f"{title} {artist}", filter=SEARCH_FILTER, limit=SEARCH_LIMIT)
+        except _CLIENT_ERRORS as error:
+            raise self._failure(error, SongSearchError, SONG_SEARCH_FAILED_MESSAGE) from error
+        for result in results:
+            video_id = result.get("videoId")
+            if video_id:
+                return str(video_id)
+        return None
+
+    def add_song(self, playlist_id: str, video_id: str) -> None:
+        """@brief Add a song to a playlist, without duplicates.
+
+        @param playlist_id Identifier of the playlist.
+        @param video_id Video id of the song.
+        @throws BrowserFileMissingError when the browser file does not exist.
+        @throws AuthenticationError when YouTube Music rejects the headers.
+        @throws SongAddError when YouTube Music does not confirm the addition.
+        """
+        client = self._connect()
+        try:
+            answer = client.add_playlist_items(playlist_id, [video_id], duplicates=False)
+        except _CLIENT_ERRORS as error:
+            raise self._failure(error, SongAddError, SONG_ADD_FAILED_MESSAGE) from error
+        status = answer.get("status") if isinstance(answer, dict) else None
+        if status != STATUS_SUCCEEDED:
+            raise SongAddError(SONG_ADD_FAILED_MESSAGE.format(reason=answer))
+
+    def _failure(
+        self,
+        error: Exception,
+        song_error: type[SongSearchError] | type[SongAddError],
+        template: str,
+    ) -> AuthenticationError | SongSearchError | SongAddError:
+        # A server error is a failure of this song; a 401/403 or a parse error is a rejected login.
+        is_server_error = isinstance(error, YTMusicServerError)
+        if is_server_error and not any(code in str(error) for code in AUTH_HTTP_CODES):
+            return song_error(template.format(reason=error))
+        return self._rejected(error)
 
     def _connect(self) -> YTMusicLike:
         if self._client is not None:

@@ -40,3 +40,20 @@ class MusicService(Protocol):
         @return The identifier of the new playlist.
         """
         ...
+
+    def search_song(self, title: str, artist: str) -> str | None:
+        """@brief Find a song.
+
+        @param title Song title.
+        @param artist Performing artist.
+        @return The video id of the top song result, or None when nothing was found.
+        """
+        ...
+
+    def add_song(self, playlist_id: str, video_id: str) -> None:
+        """@brief Add a song to a playlist.
+
+        @param playlist_id Identifier of the playlist.
+        @param video_id Video id of the song.
+        """
+        ...

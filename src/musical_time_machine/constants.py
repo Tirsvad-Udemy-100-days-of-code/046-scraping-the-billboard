@@ -147,3 +147,37 @@ PLAYLIST_EXISTS_MESSAGE: Final[str] = 'Playlist "{title}" already exists; nothin
 ## @brief Message when YouTube Music returned no playlist id; format with the answer.
 PLAYLIST_CREATION_FAILED_MESSAGE: Final[str] = "The playlist could not be created: {reason}"
 ## @}
+
+## @name Add songs
+## @{
+
+## @brief Seconds to wait between two songs, to stay gentle with YouTube Music.
+ADD_PAUSE_SECONDS: Final[float] = 0.2
+
+## @brief Number of search results to ask for; only the first is used.
+SEARCH_LIMIT: Final[int] = 1
+
+## @brief Status text ytmusicapi reports when songs were added.
+STATUS_SUCCEEDED: Final[str] = "STATUS_SUCCEEDED"
+
+## @brief HTTP status codes that mean the login was rejected.
+AUTH_HTTP_CODES: Final[tuple[str, ...]] = ("HTTP 401", "HTTP 403")
+
+## @brief Message when a search fails; format with the reason.
+SONG_SEARCH_FAILED_MESSAGE: Final[str] = "The song search failed: {reason}"
+
+## @brief Message when a song is not added; format with the answer.
+SONG_ADD_FAILED_MESSAGE: Final[str] = "The song could not be added: {reason}"
+
+## @brief Command line flag that only prints the chart songs.
+LIST_ONLY_FLAG: Final[str] = "--list-only"
+
+## @brief Help text of the list-only flag.
+LIST_ONLY_HELP: Final[str] = "Only print the numbered chart songs; no YouTube Music login."
+
+## @brief Summary line; format with added, total, title and skipped.
+SUMMARY_MESSAGE: Final[str] = 'Added {added} of {total} songs to "{title}"; skipped {skipped}.'
+
+## @brief One line per skipped song; format with title and artist.
+SKIPPED_SONG_MESSAGE: Final[str] = "Skipped: {title} - {artist}"
+## @}
