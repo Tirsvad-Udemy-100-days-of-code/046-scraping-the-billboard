@@ -1,0 +1,10 @@
+PROJECT_NAME           = "Musical Time Machine"
+INPUT                  = src
+RECURSIVE              = YES
+FILE_PATTERNS          = *.py
+OPTIMIZE_OUTPUT_JAVA   = YES
+EXTRACT_ALL            = YES
+OUTPUT_DIRECTORY       = docs/doxygen
+GENERATE_LATEX         = NO
+QUIET                  = YES
+WARN_AS_ERROR          = NO

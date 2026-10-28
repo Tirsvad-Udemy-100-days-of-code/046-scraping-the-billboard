@@ -183,3 +183,4 @@ docs/doxygen/
 .venv/
 browser.json
 html/
+/docs/doxygen/
