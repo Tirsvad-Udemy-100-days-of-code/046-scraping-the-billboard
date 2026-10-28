@@ -82,7 +82,7 @@ The program is added step by step (one pull request per lecture step):
 | Step | Status |
 | --- | --- |
 | 1. Scrape the Billboard Hot 100 | done (below) |
-| 2. YouTube Music authentication | planned in milestone 4 |
+| 2. YouTube Music authentication | code done; live screenshot waits for `browser.json` |
 | 3. Create the playlist | planned in milestone 5 |
 | 4. Search and add songs | planned in milestone 6 |
 
@@ -101,6 +101,20 @@ The chart page on Bakeboard:
 The program's output for the same date (rendered from the real output of the run, not a photo of a terminal window):
 
 ![Output of step 1 for 2026-04-18](docs/wiki/images/step1-terminal-output.png)
+
+### Step 2 - YouTube Music authentication
+
+Create `browser.json` as described in [Setup](#-setup), then check the login:
+
+```bash
+python -m musical_time_machine --check-login
+```
+
+It prints `Found N playlists in your library.`. With no or an expired `browser.json` it prints the renewal steps and exits with code 1 instead of a stack trace. `--browser-file PATH` uses another file.
+
+The screenshot below shows the run **without** a `browser.json` and the tests that use a fake YouTube Music service. A screenshot of a live login is added once the file exists (issue 22 stays open until then); the file holds personal cookies and is never committed.
+
+![Login check without browser.json and the step 2 tests](docs/wiki/images/step2-check-login.png)
 
 The screenshots and the instructions of the next steps are added with each step.
 

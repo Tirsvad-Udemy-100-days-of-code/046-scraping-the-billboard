@@ -92,3 +92,37 @@ SEARCH_FILTER: Final[str] = "songs"
 ## @brief Privacy status of the created playlist.
 PLAYLIST_PRIVACY: Final[str] = "PRIVATE"
 ## @}
+
+## @name Login check
+## @{
+
+## @brief Message with the number of library playlists; format with the count.
+PLAYLIST_COUNT_MESSAGE: Final[str] = "Found {count} playlists in your library."
+
+## @brief Message when browser.json is missing or rejected; format with reason and file.
+BROWSER_RENEWAL_MESSAGE: Final[str] = (
+    "YouTube Music login failed: {reason}\n"
+    "To create or renew {file}:\n"
+    "  1. Open Firefox and go to https://music.youtube.com while logged in.\n"
+    "  2. Open the developer tools (F12) and select the Network tab.\n"
+    "  3. Filter the requests by 'browse' and select one POST request.\n"
+    "  4. Right-click it and choose Copy Request Headers.\n"
+    "  5. Run 'ytmusicapi browser' and paste the headers "
+    "(macOS: pbpaste | ytmusicapi browser)."
+)
+
+## @brief Reason when the browser file does not exist; format with the file.
+BROWSER_FILE_MISSING_REASON: Final[str] = "{file} was not found."
+
+## @brief Command line flag that checks the YouTube Music login.
+CHECK_LOGIN_FLAG: Final[str] = "--check-login"
+
+## @brief Help text of the check-login flag.
+CHECK_LOGIN_HELP: Final[str] = "Log in to YouTube Music and print the number of library playlists."
+
+## @brief Command line flag that names the browser file.
+BROWSER_FILE_FLAG: Final[str] = "--browser-file"
+
+## @brief Help text of the browser-file flag.
+BROWSER_FILE_HELP: Final[str] = "Path of the ytmusicapi browser headers file."
+## @}

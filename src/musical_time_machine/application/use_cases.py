@@ -4,7 +4,7 @@
 
 from datetime import date
 
-from musical_time_machine.application.ports import ChartSource
+from musical_time_machine.application.ports import ChartSource, MusicService
 from musical_time_machine.domain.song import Song
 
 
@@ -26,3 +26,12 @@ def scrape_titles(chart_date: date, source: ChartSource) -> list[str]:
     @return The titles in chart order.
     """
     return [song.title for song in scrape_songs(chart_date, source)]
+
+
+def count_library_playlists(service: MusicService) -> int:
+    """@brief Count the playlists in the user's library.
+
+    @param service The music service to ask.
+    @return The number of playlists.
+    """
+    return len(service.library_playlists())
