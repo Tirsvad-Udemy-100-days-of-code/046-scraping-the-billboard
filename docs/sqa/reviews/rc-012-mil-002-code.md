@@ -9,7 +9,7 @@
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-10-28 | Proposed | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | pending |
+| 2026-10-28 | Proposed | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | [891c98a] |
 
 ---
 
@@ -59,3 +59,4 @@ Go — every Mandatory criterion passes or does not apply; no blocking finding.
 
 [MIL-002]: ../../milestones/mil-002-project-scaffold.md
 [QC-PY-001]: ../../../framework/qc/code/qc-programming-python.md
+[891c98a]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/commit/891c98ac5077def329e36d8c1ebf2b35c9216349
