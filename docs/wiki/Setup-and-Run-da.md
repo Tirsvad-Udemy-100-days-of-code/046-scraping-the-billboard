@@ -43,6 +43,8 @@ python -m pip install -e ".[dev]"
 
 Filen indeholder dine cookies: den ignoreres af git og må aldrig deles. Cookies udløber efter et stykke tid; gentag trinnene for at få en ny fil.
 
+**Hvis `--check-login` siger `Expecting value`**, indeholder filen poster, der ikke er anmodningshoveder (en kopi fra Chrome kan tilføje `Request URL`, `Decoded`, `music.youtube.com`, en sti eller `content-encoding`). Kopiér kun blokken **Request Headers**, eller brug Firefox' *Copy Request Headers*, og opret filen igen.
+
 ## Kørsel
 
 ```bash

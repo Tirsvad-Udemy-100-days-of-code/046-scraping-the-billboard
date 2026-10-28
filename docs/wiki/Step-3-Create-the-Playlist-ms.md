@@ -10,7 +10,11 @@ Program mencipta senarai main peribadi bernama `{date} Billboard 100`, contohnya
 python -m musical_time_machine --create-playlist
 ```
 
-Tangkapan skrin menunjukkan ujian langkah ini dengan YouTube Music tiruan: panggilan pertama mencipta satu senarai main, panggilan kedua untuk tarikh yang sama tidak mencipta apa-apa. Tangkapan skrin langsung akan ditambah apabila `browser.json` wujud.
+Larian sebenar dengan `browser.json` penulis: larian pertama mencipta senarai main, larian kedua tidak mencipta apa-apa:
+
+![Larian sebenar: senarai main dicipta dua kali](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/wiki/images/step3-live-create-playlist.png)
+
+Tangkapan skrin menunjukkan ujian langkah ini dengan YouTube Music tiruan: panggilan pertama mencipta satu senarai main, panggilan kedua untuk tarikh yang sama tidak mencipta apa-apa.
 
 ![Ujian langkah 3: senarai main dicipta sekali sahaja](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/wiki/images/step3-create-playlist.png)
 

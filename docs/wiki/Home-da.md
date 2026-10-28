@@ -27,4 +27,4 @@ Alle konstanter ligger i `constants.py`. Testene bruger en gemt kopi af hitliste
 
 ## Skærmbilleder
 
-Skærmbillederne af trin 1 er fra en rigtig kørsel. Skærmbillederne af trin 2 til 4 viser kørslen uden `browser.json` og testene med en falsk YouTube Music-tjeneste; rigtige skærmbilleder tilføjes, når forfatteren har oprettet `browser.json`.
+Hvert trin har et skærmbillede af en rigtig kørsel. I trin 2 til 4 bruger den rigtige kørsel forfatterens `browser.json` (den offentliggøres aldrig), og et andet skærmbillede viser testene med en falsk YouTube Music-tjeneste.

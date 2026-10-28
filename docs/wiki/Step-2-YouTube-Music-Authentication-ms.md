@@ -12,7 +12,11 @@ python -m musical_time_machine --check-login
 
 Jika berjaya, ia mencetak `Found N playlists in your library.` Tanpa `browser.json` yang sah, ia mencetak langkah pembaharuan dan keluar dengan kod 1, dan bukannya jejak tindanan.
 
-Tangkapan skrin menunjukkan larian **tanpa** `browser.json` dan ujian yang menggunakan YouTube Music tiruan. Tangkapan skrin langsung akan ditambah apabila `browser.json` wujud.
+Larian sebenar dengan `browser.json` penulis (output hanya menunjukkan bilangan, tidak pernah nama senarai main):
+
+![Semakan log masuk sebenar](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/wiki/images/step2-live-check-login.png)
+
+Tangkapan skrin menunjukkan larian **tanpa** `browser.json` dan ujian yang menggunakan YouTube Music tiruan.
 
 ![Semakan log masuk tanpa browser.json, dan ujian langkah 2](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/wiki/images/step2-check-login.png)
 

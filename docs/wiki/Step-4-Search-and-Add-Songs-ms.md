@@ -10,7 +10,11 @@ Untuk setiap lagu dalam carta, program mencari di YouTube Music dengan tajuk dan
 python -m musical_time_machine
 ```
 
-Tangkapan skrin menunjukkan ujian langkah ini dengan YouTube Music tiruan: semua lagu ditambah, dan lagu yang gagal dilangkau tanpa menghentikan larian. Tangkapan skrin langsung akan ditambah apabila `browser.json` wujud.
+Larian sebenar dengan `browser.json` penulis: kesemua 100 lagu telah ditambah:
+
+![Larian sebenar: program penuh](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/wiki/images/step4-live-add-songs.png)
+
+Tangkapan skrin menunjukkan ujian langkah ini dengan YouTube Music tiruan: semua lagu ditambah, dan lagu yang gagal dilangkau tanpa menghentikan larian.
 
 ![Ujian langkah 4: lagu ditambah dan lagu yang gagal dilangkau](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/wiki/images/step4-add-songs.png)
 

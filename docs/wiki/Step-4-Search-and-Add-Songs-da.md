@@ -10,7 +10,11 @@ For hver sang på hitlisten søger programmet på YouTube Music med titlen og ku
 python -m musical_time_machine
 ```
 
-Skærmbilledet viser testene til dette trin med en falsk YouTube Music-tjeneste: alle sange tilføjes, og en sang, der fejler, springes over uden at stoppe kørslen. Et rigtigt skærmbillede tilføjes, når `browser.json` findes.
+En rigtig kørsel med forfatterens `browser.json`: alle 100 sange blev tilføjet:
+
+![Rigtig kørsel: hele programmet](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/wiki/images/step4-live-add-songs.png)
+
+Skærmbilledet viser testene til dette trin med en falsk YouTube Music-tjeneste: alle sange tilføjes, og en sang, der fejler, springes over uden at stoppe kørslen.
 
 ![Tests af trin 4: sange tilføjes, og en sang, der fejler, springes over](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/wiki/images/step4-add-songs.png)
 
