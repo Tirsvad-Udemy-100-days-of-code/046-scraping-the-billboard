@@ -30,13 +30,13 @@ This plan schedules the seven milestones of the Musical Time Machine project ins
 
 | Gateway | Document | Window | Decision date | Owner | Stories | Main deliverable | Milestone |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Planning baseline | [MIL-001] | 2026-10-28 to 2026-11-02 | 2026-11-02 | S01 | none (technical tasks) | Accepted `BC-001` | not yet synced |
-| Project scaffold | [MIL-002] | 2026-11-03 to 2026-11-06 | 2026-11-06 | S01 | none (technical tasks) | A project skeleton with `pyproject | not yet synced |
-| Step 1 - Scrape the Billboard Hot 100 | [MIL-003] | 2026-11-07 to 2026-11-12 | 2026-11-12 | S01 | none (technical tasks) | A command that asks for a date in YYYY-MM-DD format | not yet synced |
-| Step 2 - YouTube Music authentication | [MIL-004] | 2026-11-13 to 2026-11-17 | 2026-11-17 | S01 | none (technical tasks) | A client adapter around `ytmusicapi` that reads `browser | not yet synced |
-| Step 3 - Create the playlist | [MIL-005] | 2026-11-18 to 2026-11-20 | 2026-11-20 | S01 | none (technical tasks) | A `create_playlist` use case that returns the id of an existing or new private playlist | not yet synced |
-| Step 4 - Search and add songs | [MIL-006] | 2026-11-21 to 2026-11-25 | 2026-11-25 | S01 | none (technical tasks) | An `add_songs` use case that searches with the song filter and adds the top result | not yet synced |
-| Wiki and release | [MIL-007] | 2026-11-26 to 2026-11-30 | 2026-11-30 | S01 | none (technical tasks) | Wiki pages in `docs/wiki/` in English | not yet synced |
+| Planning baseline | [MIL-001] | 2026-10-28 to 2026-11-02 | 2026-11-02 | S01 | none (technical tasks) | Accepted `BC-001` | [Milestone 1](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/milestones/264) |
+| Project scaffold | [MIL-002] | 2026-11-03 to 2026-11-06 | 2026-11-06 | S01 | none (technical tasks) | A project skeleton with `pyproject | [Milestone 2](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/milestones/265) |
+| Step 1 - Scrape the Billboard Hot 100 | [MIL-003] | 2026-11-07 to 2026-11-12 | 2026-11-12 | S01 | none (technical tasks) | A command that asks for a date in YYYY-MM-DD format | [Milestone 3](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/milestones/266) |
+| Step 2 - YouTube Music authentication | [MIL-004] | 2026-11-13 to 2026-11-17 | 2026-11-17 | S01 | none (technical tasks) | A client adapter around `ytmusicapi` that reads `browser | [Milestone 4](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/milestones/267) |
+| Step 3 - Create the playlist | [MIL-005] | 2026-11-18 to 2026-11-20 | 2026-11-20 | S01 | none (technical tasks) | A `create_playlist` use case that returns the id of an existing or new private playlist | [Milestone 5](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/milestones/268) |
+| Step 4 - Search and add songs | [MIL-006] | 2026-11-21 to 2026-11-25 | 2026-11-25 | S01 | none (technical tasks) | An `add_songs` use case that searches with the song filter and adds the top result | [Milestone 6](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/milestones/269) |
+| Wiki and release | [MIL-007] | 2026-11-26 to 2026-11-30 | 2026-11-30 | S01 | none (technical tasks) | Wiki pages in `docs/wiki/` in English | [Milestone 7](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/milestones/270) |
 
 ```plantuml
 @startgantt
