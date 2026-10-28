@@ -25,3 +25,7 @@ class BrowserFileMissingError(MusicalTimeMachineError):
 
 class AuthenticationError(MusicalTimeMachineError):
     """@brief YouTube Music rejected the browser authentication headers."""
+
+
+class PlaylistCreationError(MusicalTimeMachineError):
+    """@brief YouTube Music did not create the playlist."""

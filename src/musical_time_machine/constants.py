@@ -126,3 +126,24 @@ BROWSER_FILE_FLAG: Final[str] = "--browser-file"
 ## @brief Help text of the browser-file flag.
 BROWSER_FILE_HELP: Final[str] = "Path of the ytmusicapi browser headers file."
 ## @}
+
+## @name Create playlist
+## @{
+
+## @brief Command line flag that creates the dated playlist.
+CREATE_PLAYLIST_FLAG: Final[str] = "--create-playlist"
+
+## @brief Help text of the create-playlist flag.
+CREATE_PLAYLIST_HELP: Final[str] = (
+    "Create the private playlist '<date> Billboard 100' in YouTube Music."
+)
+
+## @brief Message after a playlist was created; format with the title.
+PLAYLIST_CREATED_MESSAGE: Final[str] = 'Created playlist "{title}".'
+
+## @brief Message when the playlist already exists; format with the title.
+PLAYLIST_EXISTS_MESSAGE: Final[str] = 'Playlist "{title}" already exists; nothing was created.'
+
+## @brief Message when YouTube Music returned no playlist id; format with the answer.
+PLAYLIST_CREATION_FAILED_MESSAGE: Final[str] = "The playlist could not be created: {reason}"
+## @}

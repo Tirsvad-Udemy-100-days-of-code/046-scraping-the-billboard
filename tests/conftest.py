@@ -40,8 +40,17 @@ class FakeMusicService:
     def __init__(
         self, playlists: list[Playlist] | None = None, error: Exception | None = None
     ) -> None:
-        self._playlists = playlists or []
+        self._playlists = list(playlists or [])
         self._error = error
+        self.created: list[tuple[str, str, str]] = []
+
+    def create_playlist(self, title: str, description: str, privacy: str) -> str:
+        if self._error is not None:
+            raise self._error
+        self.created.append((title, description, privacy))
+        playlist_id = f"new-{len(self._playlists) + 1}"
+        self._playlists.append(Playlist(playlist_id, title))
+        return playlist_id
 
     def library_playlists(self) -> list[Playlist]:
         if self._error is not None:
