@@ -7,6 +7,7 @@ from pathlib import Path
 
 import pytest
 
+from musical_time_machine.domain.playlist import Playlist
 from musical_time_machine.domain.song import Song
 
 FIXTURE_PAGE = Path(__file__).parent / "fixtures" / "bakeboard-2026-04-18.html"
@@ -31,3 +32,18 @@ class FakeChartSource:
         if self._error is not None:
             raise self._error
         return self._songs
+
+
+class FakeMusicService:
+    """@brief MusicService returning fixed playlists, or raising a given error."""
+
+    def __init__(
+        self, playlists: list[Playlist] | None = None, error: Exception | None = None
+    ) -> None:
+        self._playlists = playlists or []
+        self._error = error
+
+    def library_playlists(self) -> list[Playlist]:
+        if self._error is not None:
+            raise self._error
+        return self._playlists

@@ -5,6 +5,7 @@
 from datetime import date
 from typing import Protocol
 
+from musical_time_machine.domain.playlist import Playlist
 from musical_time_machine.domain.song import Song
 
 
@@ -16,5 +17,16 @@ class ChartSource(Protocol):
 
         @param chart_date Date of the chart.
         @return The songs in chart order.
+        """
+        ...
+
+
+class MusicService(Protocol):
+    """@brief The user's music streaming account."""
+
+    def library_playlists(self) -> list[Playlist]:
+        """@brief Get every playlist in the user's library.
+
+        @return The playlists of the library.
         """
         ...

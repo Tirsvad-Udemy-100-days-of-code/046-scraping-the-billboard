@@ -17,3 +17,11 @@ class ChartUnavailableError(MusicalTimeMachineError):
 
 class ChartParseError(MusicalTimeMachineError):
     """@brief The chart page holds no songs."""
+
+
+class BrowserFileMissingError(MusicalTimeMachineError):
+    """@brief The browser authentication file does not exist."""
+
+
+class AuthenticationError(MusicalTimeMachineError):
+    """@brief YouTube Music rejected the browser authentication headers."""
