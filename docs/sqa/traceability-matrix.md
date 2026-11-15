@@ -10,7 +10,7 @@
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
 | 2026-10-28 | Deprecated | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | [01e016e] |
-| 2026-11-16 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Added the rows of MIL-008 and its review records RC-018 to RC-021, set the domain of the changed documents to education and added the missing link definition of TM-001; reviewed in autonomous mode, not independent | pending |
+| 2026-11-16 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Added the rows of MIL-008 and its review records RC-018 to RC-021, set the domain of the changed documents to education and added the missing link definition of TM-001; reviewed in autonomous mode, not independent | [e7fe610] |
 
 ---
 
@@ -99,3 +99,4 @@ Tracks backward and forward links between artifact instances so that the traceab
 [RC-019]: ./reviews/rc-019-project-plan-baseline.md
 [RC-020]: ./reviews/rc-020-milestone-008.md
 [RC-021]: ./reviews/rc-021-wiki.md
+[e7fe610]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/commit/e7fe610b57cf2b96a58fb349ef0d9a14c3530481

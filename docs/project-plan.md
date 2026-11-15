@@ -12,7 +12,7 @@
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
 | 2026-10-28 | Deprecated | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | [01e016e] |
-| 2026-11-16 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Added the baseline gateway MIL-008 with its schedule row, scope coverage, dependency, risk and Gantt entries; recorded the order of the dates, the domain and the removed publish workflow in the Planning Assumptions and Open Issues; set the domain to education; reviewed in autonomous mode, not independent | pending |
+| 2026-11-16 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Added the baseline gateway MIL-008 with its schedule row, scope coverage, dependency, risk and Gantt entries; recorded the order of the dates, the domain and the removed publish workflow in the Planning Assumptions and Open Issues; set the domain to education; reviewed in autonomous mode, not independent | [e7fe610] |
 
 ---
 
@@ -119,3 +119,4 @@ A No-Go on a gateway returns it to rework and moves every later date by the rewo
 [MIL-007]: ./milestones/mil-007-wiki-and-release.md
 [01e016e]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/commit/01e016e15dd93cface4f4ae9e9e99919e0aace2b
 [MIL-008]: ./milestones/mil-008-framework-baseline.md
+[e7fe610]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/commit/e7fe610b57cf2b96a58fb349ef0d9a14c3530481

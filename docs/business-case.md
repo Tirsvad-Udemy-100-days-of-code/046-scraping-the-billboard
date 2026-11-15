@@ -12,7 +12,7 @@
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
 | 2026-10-28 | Deprecated | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | [01e016e] |
-| 2026-11-16 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Added objective 7, success criterion 8, a scope item, an out-of-scope item, a risk and constraints for the baseline milestone MIL-008; set the domain to education; reviewed in autonomous mode, not independent | pending |
+| 2026-11-16 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Added objective 7, success criterion 8, a scope item, an out-of-scope item, a risk and constraints for the baseline milestone MIL-008; set the domain to education; reviewed in autonomous mode, not independent | [e7fe610] |
 
 ---
 
@@ -144,3 +144,4 @@ Proceed — the scope is small, the dependencies are few and the result is usefu
 [01e016e]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/commit/01e016e15dd93cface4f4ae9e9e99919e0aace2b
 [PP-001]: ./project-plan.md
 [MIL-008]: ./milestones/mil-008-framework-baseline.md
+[e7fe610]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/commit/e7fe610b57cf2b96a58fb349ef0d9a14c3530481
