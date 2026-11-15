@@ -1,6 +1,6 @@
-# Langkah 1 - Mengikis Billboard Hot 100
+[English](Step-1-Scrape-the-Billboard) · [Dansk](Step-1-Scrape-the-Billboard-da) · **Bahasa Melayu**
 
-🌐 **English** · [Dansk](Step-1-Scrape-the-Billboard-da) · [Bahasa Melayu](Step-1-Scrape-the-Billboard-ms)
+# Langkah 1 - Mengikis Billboard Hot 100
 
 ## Apa yang dilakukan oleh langkah ini
 
@@ -12,11 +12,11 @@ python -m musical_time_machine --list-only
 
 Laman Bakeboard bagi 2026-04-18:
 
-![Laman Bakeboard Hot 100 untuk 2026-04-18](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/wiki/images/step1-bakeboard-page.png)
+![Laman Bakeboard Hot 100 untuk 2026-04-18](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/images/step1-bakeboard-page.png)
 
 Output program (dipaparkan daripada teks larian sebenar, bukan gambar tetingkap terminal):
 
-![Output langkah 1 untuk 2026-04-18](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/wiki/images/step1-terminal-output.png)
+![Output langkah 1 untuk 2026-04-18](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/images/step1-terminal-output.png)
 
 ## Apa yang kita pelajari
 

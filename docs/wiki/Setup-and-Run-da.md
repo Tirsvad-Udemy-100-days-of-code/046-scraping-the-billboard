@@ -1,6 +1,6 @@
-# Setup og kørsel
+[English](Setup-and-Run) · **Dansk** · [Bahasa Melayu](Setup-and-Run-ms)
 
-🌐 **English** · [Dansk](Setup-and-Run-da) · [Bahasa Melayu](Setup-and-Run-ms)
+# Setup og kørsel
 
 ## Hvad du skal bruge
 

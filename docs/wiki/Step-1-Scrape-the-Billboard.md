@@ -1,6 +1,6 @@
-# Step 1 - Scrape the Billboard Hot 100
+**English** · [Dansk](Step-1-Scrape-the-Billboard-da) · [Bahasa Melayu](Step-1-Scrape-the-Billboard-ms)
 
-🌐 **English** · [Dansk](Step-1-Scrape-the-Billboard-da) · [Bahasa Melayu](Step-1-Scrape-the-Billboard-ms)
+# Step 1 - Scrape the Billboard Hot 100
 
 ## What the step does
 
@@ -12,11 +12,11 @@ python -m musical_time_machine --list-only
 
 The Bakeboard page of 2026-04-18:
 
-![The Bakeboard Hot 100 page for 2026-04-18](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/wiki/images/step1-bakeboard-page.png)
+![The Bakeboard Hot 100 page for 2026-04-18](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/images/step1-bakeboard-page.png)
 
 The output of the program (rendered from the text of a real run, not a photo of a terminal window):
 
-![Output of step 1 for 2026-04-18](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/wiki/images/step1-terminal-output.png)
+![Output of step 1 for 2026-04-18](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/images/step1-terminal-output.png)
 
 ## What we gained
 

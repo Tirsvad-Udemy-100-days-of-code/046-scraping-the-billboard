@@ -1,6 +1,6 @@
-# Langkah 4 - Mencari dan Menambah Lagu
+[English](Step-4-Search-and-Add-Songs) · [Dansk](Step-4-Search-and-Add-Songs-da) · **Bahasa Melayu**
 
-🌐 **English** · [Dansk](Step-4-Search-and-Add-Songs-da) · [Bahasa Melayu](Step-4-Search-and-Add-Songs-ms)
+# Langkah 4 - Mencari dan Menambah Lagu
 
 ## Apa yang dilakukan oleh langkah ini
 
@@ -12,11 +12,11 @@ python -m musical_time_machine
 
 Larian sebenar dengan `browser.json` penulis: kesemua 100 lagu telah ditambah:
 
-![Larian sebenar: program penuh](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/wiki/images/step4-live-add-songs.png)
+![Larian sebenar: program penuh](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/images/step4-live-add-songs.png)
 
 Tangkapan skrin menunjukkan ujian langkah ini dengan YouTube Music tiruan: semua lagu ditambah, dan lagu yang gagal dilangkau tanpa menghentikan larian.
 
-![Ujian langkah 4: lagu ditambah dan lagu yang gagal dilangkau](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/wiki/images/step4-add-songs.png)
+![Ujian langkah 4: lagu ditambah dan lagu yang gagal dilangkau](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/images/step4-add-songs.png)
 
 ## Apa yang kita pelajari
 

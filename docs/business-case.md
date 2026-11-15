@@ -4,14 +4,15 @@
 | Key | Value |
 | --- | --- |
 | ID | BC-001 |
-| CrossReference | [SA-001] |
+| CrossReference | [SA-001], [PP-001], [MIL-008] |
 | Language | en |
-| Domain | it |
+| Domain | education |
 
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-10-28 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | [01e016e] |
+| 2026-10-28 | Deprecated | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | [01e016e] |
+| 2026-11-16 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Added objective 7, success criterion 8, a scope item, an out-of-scope item, a risk and constraints for the baseline milestone MIL-008; set the domain to education; reviewed in autonomous mode, not independent | [e7fe610] |
 
 ---
 
@@ -41,6 +42,7 @@ A documented, tested and screenshot-illustrated solution makes the assignment re
 4. O4: Search each song and add the top song result to the playlist, skipping failures without stopping.
 5. O5: Provide automated tests, a README with setup, run and test instructions, a Doxygen configuration and a wiki in English, Danish and Bahasa Malaysia, with a screenshot for each lecture step.
 6. O6: Publish the repository with a description and topics.
+7. O7: Bring the finished project to the common baseline of the framework: the adopted framework release, a wiki that follows the framework's page and language-line rules, licence and project URL metadata, a README that lists only the documents of the repository, and review records for every changed document ([MIL-008]).
 
 ## Scope
 
@@ -52,6 +54,7 @@ A documented, tested and screenshot-illustrated solution makes the assignment re
 - `pyproject.toml`, `.venv` instructions, `constants.py`, pytest tests, Doxygen comments and `Doxyfile`, `README.md` from the framework template.
 - Wiki pages in en, da and ms, with a screenshot for each of the four lecture steps.
 - Repository description and topics on the git host.
+- The baseline milestone [MIL-008]: the framework release, the wiki in the framework's shape (language line first on each page, screenshots in `docs/images/`), the README without the private framework files in its appendix, licence and project URL metadata, `.editorconfig`, `.env.example` and review records. It changes no behaviour of the program.
 
 ### Out of Scope
 
@@ -59,6 +62,7 @@ A documented, tested and screenshot-illustrated solution makes the assignment re
 - Automating the creation of `browser.json`; it is a manual step of S01 and contains personal session cookies.
 - A graphical user interface.
 - Using the git host tokens in `.env` inside the application or its tests.
+- Any change to `src/` or `tests/` in the baseline milestone [MIL-008]. No chart is scraped from a live site and no YouTube Music call is made in that milestone; the tests use a stored chart page and a fake music service.
 
 ## Expected Benefits
 
@@ -87,6 +91,7 @@ The project supports S01's goal of completing the bootcamp with portfolio-qualit
 | 5 | Runtime dependencies | At most 3: `requests`, `beautifulsoup4`, `ytmusicapi` | `pyproject.toml` |
 | 6 | Documentation | README with setup, run and test sections; wiki pages in en, da, ms with 4 step screenshots each | File check in the milestone review |
 | 7 | Repository metadata | Description and at least 5 topics set | Git host API response |
+| 8 | The baseline milestone is done (objective 7) | Every wiki page starts with its language line, the screenshots are in `docs/images/`, `framework/scripts/check-readme.sh`, `check-languages.sh` and `check-editorconfig.sh` exit with code 0, `python -m pytest` passes, 100 % of the continuous integration (CI) checks of the pull request of [MIL-008] pass | Files in `docs/wiki/` and `docs/images/`, the script exit codes and the pull request status on the git host |
 
 ## Risks
 
@@ -97,6 +102,7 @@ The project supports S01's goal of completing the bootcamp with portfolio-qualit
 | Personal cookies or tokens are committed | Account takeover | `browser.json` and `.env` are in `.gitignore`; the app and tests never read `.env` |
 | `ytmusicapi` changes its interface | Playlist code breaks | The library is behind a port (an interface) and its version is bounded in `pyproject.toml` |
 | Screenshots show personal data | Privacy loss | Screenshots are taken of terminal output and public pages, and checked before commit |
+| The documents of the baseline milestone [MIL-008] change documents that were accepted earlier, and the AI stand-in for S01 reviews them | A defect is missed because the review is not independent | Every review record of the baseline says `Mode: autonomous, not independent`, `src/` and `tests/` are not changed, the tests run before and after, and the end-of-run summary lists the reviews for challenge |
 
 ## Assumptions
 
@@ -111,8 +117,8 @@ The project supports S01's goal of completing the bootcamp with portfolio-qualit
 - Folder structure `src/`, `tests/`, `docs/`; Doxygen comments in the source.
 - Runtime dependencies only where needed.
 - One branch and one pull request per milestone, to keep track of the steps.
-- Planned window: 2026-10-28 to 2026-11-30.
-- The Product Owner's language is English and the domain is IT; the wiki is written in en, da and ms.
+- Planned window: 2026-10-28 to 2026-11-30. The baseline milestone [MIL-008] starts 2026-11-16 and is finished within one week, by 2026-11-23, inside that window. For that milestone only, an AI stand-in for S01 reviews and accepts the changed documents.
+- The Product Owner's language is English and the wiki is written in en, da and ms. The PO domain is education (it was IT until [MIL-008]; the documents that [MIL-008] does not change keep the domain `it`, see the Open Issues of [PP-001]).
 
 ## Cost–Benefit Assessment
 
@@ -136,3 +142,6 @@ Proceed — the scope is small, the dependencies are few and the result is usefu
 
 [SA-001]: ./stakeholder-analysis.md
 [01e016e]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/commit/01e016e15dd93cface4f4ae9e9e99919e0aace2b
+[PP-001]: ./project-plan.md
+[MIL-008]: ./milestones/mil-008-framework-baseline.md
+[e7fe610]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/commit/e7fe610b57cf2b96a58fb349ef0d9a14c3530481

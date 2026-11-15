@@ -1,6 +1,6 @@
-# Persediaan dan Menjalankan
+[English](Setup-and-Run) · [Dansk](Setup-and-Run-da) · **Bahasa Melayu**
 
-🌐 **English** · [Dansk](Setup-and-Run-da) · [Bahasa Melayu](Setup-and-Run-ms)
+# Persediaan dan Menjalankan
 
 ## Apa yang anda perlukan
 

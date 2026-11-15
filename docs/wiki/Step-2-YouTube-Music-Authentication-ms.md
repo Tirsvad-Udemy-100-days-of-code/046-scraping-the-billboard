@@ -1,6 +1,6 @@
-# Langkah 2 - Pengesahan YouTube Music
+[English](Step-2-YouTube-Music-Authentication) · [Dansk](Step-2-YouTube-Music-Authentication-da) · **Bahasa Melayu**
 
-🌐 **English** · [Dansk](Step-2-YouTube-Music-Authentication-da) · [Bahasa Melayu](Step-2-YouTube-Music-Authentication-ms)
+# Langkah 2 - Pengesahan YouTube Music
 
 ## Apa yang dilakukan oleh langkah ini
 
@@ -14,11 +14,11 @@ Jika berjaya, ia mencetak `Found N playlists in your library.` Tanpa `browser.js
 
 Larian sebenar dengan `browser.json` penulis (output hanya menunjukkan bilangan, tidak pernah nama senarai main):
 
-![Semakan log masuk sebenar](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/wiki/images/step2-live-check-login.png)
+![Semakan log masuk sebenar](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/images/step2-live-check-login.png)
 
 Tangkapan skrin menunjukkan larian **tanpa** `browser.json` dan ujian yang menggunakan YouTube Music tiruan.
 
-![Semakan log masuk tanpa browser.json, dan ujian langkah 2](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/wiki/images/step2-check-login.png)
+![Semakan log masuk tanpa browser.json, dan ujian langkah 2](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/images/step2-check-login.png)
 
 ## Apa yang kita pelajari
 
