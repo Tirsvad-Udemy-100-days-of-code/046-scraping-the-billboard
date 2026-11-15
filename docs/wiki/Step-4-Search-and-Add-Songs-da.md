@@ -1,6 +1,6 @@
-# Trin 4 - Søg efter og tilføj sange
+[English](Step-4-Search-and-Add-Songs) · **Dansk** · [Bahasa Melayu](Step-4-Search-and-Add-Songs-ms)
 
-🌐 **English** · [Dansk](Step-4-Search-and-Add-Songs-da) · [Bahasa Melayu](Step-4-Search-and-Add-Songs-ms)
+# Trin 4 - Søg efter og tilføj sange
 
 ## Hvad trinnet gør
 
@@ -12,11 +12,11 @@ python -m musical_time_machine
 
 En rigtig kørsel med forfatterens `browser.json`: alle 100 sange blev tilføjet:
 
-![Rigtig kørsel: hele programmet](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/wiki/images/step4-live-add-songs.png)
+![Rigtig kørsel: hele programmet](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/images/step4-live-add-songs.png)
 
 Skærmbilledet viser testene til dette trin med en falsk YouTube Music-tjeneste: alle sange tilføjes, og en sang, der fejler, springes over uden at stoppe kørslen.
 
-![Tests af trin 4: sange tilføjes, og en sang, der fejler, springes over](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/wiki/images/step4-add-songs.png)
+![Tests af trin 4: sange tilføjes, og en sang, der fejler, springes over](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/images/step4-add-songs.png)
 
 ## Det lærte vi
 

@@ -28,7 +28,9 @@ Layout of the repository:
 | --- | --- |
 | `src/musical_time_machine/` | The program, in the layers `domain`, `application`, `infrastructure` and `presentation`; all constants are in `constants.py` |
 | `tests/` | The automated tests (pytest); they use a stored chart page and a fake music service, never the network |
-| `docs/` | Business case, plan, milestones, reviews and the wiki sources |
+| `docs/` | Business case, plan, milestones, reviews, the wiki sources and the images |
+
+Besides the program, the repository holds `framework/` (the SQA and QC framework, a git submodule that the project documents follow), `.editorconfig` (the editor settings of its baseline) and `.env.example` (placeholders for the git host tokens that the framework scripts read; the program reads no environment variable, only the `browser.json` file described in [Setup](#-setup)).
 
 The wiki (`docs/wiki/`, published to the repository wiki) is written in English, Danish and Bahasa Malaysia and explains what each lecture step teaches: [English](docs/wiki/Home.md), [Dansk](docs/wiki/Home-da.md), [Bahasa Melayu](docs/wiki/Home-ms.md).
 
@@ -98,11 +100,11 @@ The program asks for a date in the format `YYYY-MM-DD` and prints the 100 songs 
 
 The chart page on Bakeboard:
 
-![The Bakeboard Hot 100 page for 2026-04-18](docs/wiki/images/step1-bakeboard-page.png)
+![The Bakeboard Hot 100 page for 2026-04-18](docs/images/step1-bakeboard-page.png)
 
 The program's output for the same date (rendered from the real output of the run, not a photo of a terminal window):
 
-![Output of step 1 for 2026-04-18](docs/wiki/images/step1-terminal-output.png)
+![Output of step 1 for 2026-04-18](docs/images/step1-terminal-output.png)
 
 ### Step 2 - YouTube Music authentication
 
@@ -116,11 +118,11 @@ It prints `Found N playlists in your library.`. With no or an expired `browser.j
 
 A live run with the author's `browser.json` (the output shows only the count, never playlist names):
 
-![Live login check](docs/wiki/images/step2-live-check-login.png)
+![Live login check](docs/images/step2-live-check-login.png)
 
 The file holds personal cookies and is never committed. The next screenshot shows the run **without** a `browser.json` and the tests that use a fake YouTube Music service:
 
-![Login check without browser.json and the step 2 tests](docs/wiki/images/step2-check-login.png)
+![Login check without browser.json and the step 2 tests](docs/images/step2-check-login.png)
 
 ### Step 3 - Create the playlist
 
@@ -132,11 +134,11 @@ It asks for the date and creates the private playlist `YYYY-MM-DD Billboard 100`
 
 A live run with the author's `browser.json`: the first run creates the playlist, the second run creates nothing:
 
-![Live: create the playlist twice](docs/wiki/images/step3-live-create-playlist.png)
+![Live: create the playlist twice](docs/images/step3-live-create-playlist.png)
 
 The next screenshot shows the tests of this step, which use a fake YouTube Music service (no account needed):
 
-![Tests of step 3: the playlist is created once](docs/wiki/images/step3-create-playlist.png)
+![Tests of step 3: the playlist is created once](docs/images/step3-create-playlist.png)
 
 ### Step 4 - Search and add songs
 
@@ -148,11 +150,11 @@ The full program: it asks for the date, scrapes the chart, creates the playlist 
 
 A live run with the author's `browser.json`: all 100 songs were added:
 
-![Live: the full program](docs/wiki/images/step4-live-add-songs.png)
+![Live: the full program](docs/images/step4-live-add-songs.png)
 
 The next screenshot shows the tests of this step with a fake YouTube Music service:
 
-![Tests of step 4: songs are added and a failing song is skipped](docs/wiki/images/step4-add-songs.png)
+![Tests of step 4: songs are added and a failing song is skipped](docs/images/step4-add-songs.png)
 
 ## 🧪 Tests
 
@@ -168,7 +170,7 @@ doxygen Doxyfile
 
 ## 📄 License
 
-GNU Affero General Public License v3.0, see [LICENSE](./LICENSE).
+The project is licensed under the GNU Affero General Public License v3.0 only (AGPL-3.0-only); see the [LICENSE](./LICENSE) file.
 
 ## 🔗 Links
 
@@ -180,7 +182,6 @@ GNU Affero General Public License v3.0, see [LICENSE](./LICENSE).
 
 | Document | What it tells you |
 | --- | --- |
-| [AGENTS.md][agents] | The rules AI agents follow in this repository |
 | [Business Case][BC-001] | Why the project exists, its scope and success criteria |
 | [Stakeholder Analysis][SA-001] | Who is involved; the stakeholder IDs used for owners and reviewers |
 | [Project Plan][PP-001] | The gateways and their schedule |
@@ -188,15 +189,12 @@ GNU Affero General Public License v3.0, see [LICENSE](./LICENSE).
 | [Artifact registry][registry] | Where each artifact type lives, the next version, the PO language and domain |
 | [Traceability matrix][TM-001] | How the artifacts link and when each was last reviewed |
 | [Governance][GOV-001] | The review workflow, who decides and how disputes escalate |
-| [Framework README][framework-readme] | The framework this project uses |
-| [Framework changelog][framework-changelog] | What changed in each framework release |
 
 ---
 
 [repository]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard
 [documentation]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/wiki
 [issues]: https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/issues
-[agents]: ./AGENTS.md
 [BC-001]: ./docs/business-case.md
 [SA-001]: ./docs/stakeholder-analysis.md
 [PP-001]: ./docs/project-plan.md
@@ -204,5 +202,3 @@ GNU Affero General Public License v3.0, see [LICENSE](./LICENSE).
 [registry]: ./docs/artifact-registry.md
 [TM-001]: ./docs/sqa/traceability-matrix.md
 [GOV-001]: ./docs/sqa/governance.md
-[framework-readme]: ./framework/README.md
-[framework-changelog]: ./framework/CHANGELOG.md

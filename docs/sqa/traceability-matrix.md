@@ -4,12 +4,13 @@
 | Key | Value |
 | --- | --- |
 | ID | TM-001 |
-| CrossReference | [BC-001], [SA-001], [PP-001], [GOV-001] |
+| CrossReference | [BC-001], [SA-001], [PP-001], [GOV-001], [MIL-008] |
 
 ## Version History
 | Date | Status | Author | Reviewer | Change | Commit |
 | --- | --- | --- | --- | --- | --- |
-| 2026-10-28 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | [01e016e] |
+| 2026-10-28 | Deprecated | Jens Tirsvad Nielsen | AI as stand-in for S01 | Initial version | [01e016e] |
+| 2026-11-16 | Accepted | Jens Tirsvad Nielsen | AI as stand-in for S01 | Added the rows of MIL-008 and its review records RC-018 to RC-021, set the domain of the changed documents to education and added the missing link definition of TM-001; reviewed in autonomous mode, not independent | pending |
 
 ---
 
@@ -22,8 +23,8 @@ Tracks backward and forward links between artifact instances so that the traceab
 | Artifact Instance | Type | Language | Domain | Upstream (Backward Link) | Downstream (Forward Link) | Last Reviewed (RC-ID) |
 | --- | --- | --- | --- | --- | --- | --- |
 | [SA-001] | SA | en | it | - | [BC-001] | [RC-002] |
-| [BC-001] | BC | en | it | [SA-001] | [PP-001], [MIL-001] | [RC-001] |
-| [PP-001] | PP | en | it | [BC-001], [SA-001] | [MIL-001] | [RC-003] |
+| [BC-001] | BC | en | education | [SA-001] | [PP-001], [MIL-001], [MIL-008] | [RC-018], [RC-001] |
+| [PP-001] | PP | en | education | [BC-001], [SA-001] | [MIL-001], [MIL-008] | [RC-019], [RC-003] |
 | [GOV-001] | GOV | en | it | [BC-001], [SA-001] | [TM-001] | [RC-004] |
 | [MIL-001] | MIL | en | it | [BC-001], [PP-001] | [MIL-002] | [RC-005] |
 | [MIL-002] | MIL | en | it | [MIL-001] | [MIL-003] | [RC-006], [RC-012] |
@@ -31,19 +32,21 @@ Tracks backward and forward links between artifact instances so that the traceab
 | [MIL-004] | MIL | en | it | [MIL-003] | [MIL-005] | [RC-008], [RC-014] |
 | [MIL-005] | MIL | en | it | [MIL-004] | [MIL-006] | [RC-009], [RC-015] |
 | [MIL-006] | MIL | en | it | [MIL-005] | [MIL-007] | [RC-010], [RC-016] |
-| [MIL-007] | MIL | en | it | [MIL-006] | - | [RC-011], [RC-017] |
+| [MIL-007] | MIL | en | it | [MIL-006] | [MIL-008] | [RC-011], [RC-017] |
+| [MIL-008] | MIL | en | education | [BC-001], [PP-001], [MIL-007] | - | [RC-020] |
 | [TM-001] | TM | - | - | [BC-001] | - | - |
+| Wiki | Wiki | en, da, ms | education | [BC-001], [MIL-008] | - | [RC-021] |
 
 ## Concern Coverage
 
 | Concern (CN-ID) | Views that answer it | Decisions (ADR) | Quality check (TP) | Status |
 | --- | --- | --- | --- | --- |
 | CN-001 | [MIL-003], [MIL-004], [MIL-005], [MIL-006] | - | - | Covered |
-| CN-002 | [MIL-002] (ignore rules), [MIL-004] | - | - | Covered |
+| CN-002 | [MIL-002] (ignore rules), [MIL-004], [MIL-008] (criterion 6) | - | - | Covered |
 | CN-003 | [MIL-003], [MIL-006] | - | - | Covered |
-| CN-004 | [MIL-002], [MIL-004] | - | - | Covered |
-| CN-005 | [MIL-001] | - | - | Covered |
-| CN-006 | [MIL-002] | - | - | Covered |
+| CN-004 | [MIL-002], [MIL-004], [MIL-008] (criterion 4) | - | - | Covered |
+| CN-005 | [MIL-001], [MIL-008] (criterion 3) | - | - | Covered |
+| CN-006 | [MIL-002], [MIL-008] (criterion 2) | - | - | Covered |
 
 ## Open Inconsistencies
 
@@ -55,6 +58,9 @@ Tracks backward and forward links between artifact instances so that the traceab
 
 - No design artifacts (use cases, domain model, DCD, ERD, test plan) exist: all tasks are technical tasks; `-` in Upstream means foundational, in Downstream that nothing is built on it yet, in Last Reviewed that no `RC-*` exists yet.
 - Concern coverage will be rechecked when code exists (MIL-003 to MIL-007).
+- The domain of [BC-001], [PP-001], [MIL-008] and the wiki is `education` since [MIL-008]. The other documents keep the domain `it` they were accepted with; a change of their domain would need a new review of each (see the Open Issues of [PP-001]).
+- [MIL-008] changes no source or test file. The wiki (`docs/wiki/`) is documentation, not an artifact with an ID or a Language and Domain row; it has its own review record, [RC-021].
+- The wiki workflow reviewed in [RC-017] was removed in an earlier change; the wiki is published by the shared scoped workflow (see the Open Issues of [PP-001]).
 
 ---
 
@@ -62,6 +68,7 @@ Tracks backward and forward links between artifact instances so that the traceab
 [SA-001]: ../stakeholder-analysis.md
 [PP-001]: ../project-plan.md
 [GOV-001]: ./governance.md
+[TM-001]: ./traceability-matrix.md
 [MIL-001]: ../milestones/mil-001-planning-baseline.md
 [MIL-002]: ../milestones/mil-002-project-scaffold.md
 [MIL-003]: ../milestones/mil-003-step-1-scrape-billboard.md
@@ -87,3 +94,8 @@ Tracks backward and forward links between artifact instances so that the traceab
 [RC-015]: ./reviews/rc-015-mil-005-code.md
 [RC-016]: ./reviews/rc-016-mil-006-code.md
 [RC-017]: ./reviews/rc-017-mil-007-workflow.md
+[MIL-008]: ../milestones/mil-008-framework-baseline.md
+[RC-018]: ./reviews/rc-018-business-case-baseline.md
+[RC-019]: ./reviews/rc-019-project-plan-baseline.md
+[RC-020]: ./reviews/rc-020-milestone-008.md
+[RC-021]: ./reviews/rc-021-wiki.md

@@ -1,6 +1,6 @@
-# Setup and Run
+**English** · [Dansk](Setup-and-Run-da) · [Bahasa Melayu](Setup-and-Run-ms)
 
-🌐 **English** · [Dansk](Setup-and-Run-da) · [Bahasa Melayu](Setup-and-Run-ms)
+# Setup and Run
 
 ## What you need
 

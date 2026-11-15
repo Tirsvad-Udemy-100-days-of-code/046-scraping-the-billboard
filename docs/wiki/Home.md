@@ -1,6 +1,6 @@
-# Musical Time Machine
+**English** · [Dansk](Home-da) · [Bahasa Melayu](Home-ms)
 
-🌐 **English** · [Dansk](Home-da) · [Bahasa Melayu](Home-ms)
+# Musical Time Machine
 
 A solution to day 46 of Udemy's *100 Days of Code: The Complete Python Pro Bootcamp*. Type a date, and the program scrapes the Billboard Hot 100 of that day and builds a private YouTube Music playlist from the songs, so you can listen to the music of a day that matters to you.
 

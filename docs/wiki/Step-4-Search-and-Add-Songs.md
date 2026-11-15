@@ -1,6 +1,6 @@
-# Step 4 - Search and Add Songs
+**English** · [Dansk](Step-4-Search-and-Add-Songs-da) · [Bahasa Melayu](Step-4-Search-and-Add-Songs-ms)
 
-🌐 **English** · [Dansk](Step-4-Search-and-Add-Songs-da) · [Bahasa Melayu](Step-4-Search-and-Add-Songs-ms)
+# Step 4 - Search and Add Songs
 
 ## What the step does
 
@@ -12,11 +12,11 @@ python -m musical_time_machine
 
 A live run with the author's `browser.json`: all 100 songs were added:
 
-![Live: the full program](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/wiki/images/step4-live-add-songs.png)
+![Live: the full program](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/images/step4-live-add-songs.png)
 
 The screenshot shows the tests of this step with a fake YouTube Music: all songs are added, and a failing song is skipped without stopping the run.
 
-![Tests of step 4: songs are added and a failing song is skipped](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/wiki/images/step4-add-songs.png)
+![Tests of step 4: songs are added and a failing song is skipped](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/images/step4-add-songs.png)
 
 ## What we gained
 

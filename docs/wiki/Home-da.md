@@ -1,6 +1,6 @@
-# Musical Time Machine
+[English](Home) · **Dansk** · [Bahasa Melayu](Home-ms)
 
-🌐 **English** · [Dansk](Home-da) · [Bahasa Melayu](Home-ms)
+# Musical Time Machine
 
 En løsning på dag 46 i Udemys *100 Days of Code: The Complete Python Pro Bootcamp*. Skriv en dato, så scraper programmet Billboard Hot 100 for den dag (scraping betyder, at et program automatisk henter og læser data fra en hjemmeside) og bygger en privat YouTube Music-playliste af sangene, så du kan høre musikken fra en dag, der betyder noget for dig.
 

@@ -1,6 +1,6 @@
-# Musical Time Machine
+[English](Home) · [Dansk](Home-da) · **Bahasa Melayu**
 
-🌐 **English** · [Dansk](Home-da) · [Bahasa Melayu](Home-ms)
+# Musical Time Machine
 
 Penyelesaian untuk hari ke-46 kursus Udemy *100 Days of Code: The Complete Python Pro Bootcamp*. Taip satu tarikh, dan program ini mengikis web (scraping) Billboard Hot 100 pada hari itu, lalu membina senarai main YouTube Music yang peribadi daripada lagu-lagu tersebut, supaya anda dapat mendengar muzik pada hari yang bermakna bagi anda.
 

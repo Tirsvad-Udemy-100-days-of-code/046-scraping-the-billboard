@@ -1,6 +1,6 @@
-# Langkah 3 - Mencipta Senarai Main
+[English](Step-3-Create-the-Playlist) · [Dansk](Step-3-Create-the-Playlist-da) · **Bahasa Melayu**
 
-🌐 **English** · [Dansk](Step-3-Create-the-Playlist-da) · [Bahasa Melayu](Step-3-Create-the-Playlist-ms)
+# Langkah 3 - Mencipta Senarai Main
 
 ## Apa yang dilakukan oleh langkah ini
 
@@ -12,11 +12,11 @@ python -m musical_time_machine --create-playlist
 
 Larian sebenar dengan `browser.json` penulis: larian pertama mencipta senarai main, larian kedua tidak mencipta apa-apa:
 
-![Larian sebenar: senarai main dicipta dua kali](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/wiki/images/step3-live-create-playlist.png)
+![Larian sebenar: senarai main dicipta dua kali](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/images/step3-live-create-playlist.png)
 
 Tangkapan skrin menunjukkan ujian langkah ini dengan YouTube Music tiruan: panggilan pertama mencipta satu senarai main, panggilan kedua untuk tarikh yang sama tidak mencipta apa-apa.
 
-![Ujian langkah 3: senarai main dicipta sekali sahaja](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/wiki/images/step3-create-playlist.png)
+![Ujian langkah 3: senarai main dicipta sekali sahaja](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/images/step3-create-playlist.png)
 
 ## Apa yang kita pelajari
 

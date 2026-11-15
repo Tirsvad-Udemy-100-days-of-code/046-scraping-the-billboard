@@ -1,6 +1,6 @@
-# Trin 3 - Opret playlisten
+[English](Step-3-Create-the-Playlist) · **Dansk** · [Bahasa Melayu](Step-3-Create-the-Playlist-ms)
 
-🌐 **English** · [Dansk](Step-3-Create-the-Playlist-da) · [Bahasa Melayu](Step-3-Create-the-Playlist-ms)
+# Trin 3 - Opret playlisten
 
 ## Hvad trinnet gør
 
@@ -12,11 +12,11 @@ python -m musical_time_machine --create-playlist
 
 En rigtig kørsel med forfatterens `browser.json`: første kørsel opretter playlisten, anden kørsel opretter ingenting:
 
-![Rigtig kørsel: playlisten oprettes to gange](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/wiki/images/step3-live-create-playlist.png)
+![Rigtig kørsel: playlisten oprettes to gange](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/images/step3-live-create-playlist.png)
 
 Skærmbilledet viser testene til dette trin med en falsk YouTube Music-tjeneste: det første kald opretter én playliste, og det andet kald for samme dato opretter ingen.
 
-![Tests af trin 3: playlisten oprettes én gang](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/wiki/images/step3-create-playlist.png)
+![Tests af trin 3: playlisten oprettes én gang](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/images/step3-create-playlist.png)
 
 ## Det lærte vi
 

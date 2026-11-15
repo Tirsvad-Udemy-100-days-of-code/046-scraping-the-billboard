@@ -1,6 +1,6 @@
-# Trin 2 - YouTube Music-godkendelse
+[English](Step-2-YouTube-Music-Authentication) · **Dansk** · [Bahasa Melayu](Step-2-YouTube-Music-Authentication-ms)
 
-🌐 **English** · [Dansk](Step-2-YouTube-Music-Authentication-da) · [Bahasa Melayu](Step-2-YouTube-Music-Authentication-ms)
+# Trin 2 - YouTube Music-godkendelse
 
 ## Hvad trinnet gør
 
@@ -14,11 +14,11 @@ Ved succes udskriver det `Found N playlists in your library.` Uden en gyldig `br
 
 En rigtig kørsel med forfatterens `browser.json` (udskriften viser kun antallet, aldrig playlisternes navne):
 
-![Rigtigt login-tjek](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/wiki/images/step2-live-check-login.png)
+![Rigtigt login-tjek](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/images/step2-live-check-login.png)
 
 Skærmbilledet viser kørslen **uden** `browser.json` og de tests, der bruger en falsk YouTube Music-tjeneste.
 
-![Login-tjek uden browser.json og testene til trin 2](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/wiki/images/step2-check-login.png)
+![Login-tjek uden browser.json og testene til trin 2](https://git.tirsystem.com/Tirsvad-Udemy-100-days-of-code/046-scraping-the-billboard/raw/branch/main/docs/images/step2-check-login.png)
 
 ## Det lærte vi
 
